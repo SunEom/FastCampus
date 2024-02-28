@@ -19,8 +19,10 @@ class LoginViewController: UIViewController {
         self.loginButton.layer.borderColor = UIColor(named: "main-brown")?.cgColor
         self.loginButton.layer.borderWidth = 1
     }
+    
     @IBAction func buttonDidTap(_ sender: Any) {
-        
+        self.view.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
     }
 }
 
+ 
