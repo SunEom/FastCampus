@@ -9,33 +9,50 @@ import UIKit
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
+    private let homeViewModel: HomeViewModel = .init()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.bindViewModel()
         self.setupTableView()
+        
+        self.homeViewModel.requestData()
     }
     
     func setupTableView() {
         self.tableView.register(
-            UINib(nibName: "HomeHeaderCell", bundle: .main),
+            UINib(nibName: HomeHeaderCell.identifier, bundle: .main),
             forCellReuseIdentifier: HomeHeaderCell.identifier
         )
         self.tableView.register(
-            UINib(nibName: "HomeVideoCell", bundle: .main),
+            UINib(nibName: HomeVideoCell.identifier, bundle: .main),
             forCellReuseIdentifier: HomeVideoCell.identifier
         )
         self.tableView.register(
-            UINib(nibName: "HomeRecommendContainerCell", bundle: .main),
+            UINib(nibName: HomeRankingContainerCell.identifier, bundle: .main),
+            forCellReuseIdentifier: HomeRankingContainerCell.identifier
+        )
+        self.tableView.register(
+            UINib(nibName: HomeRecentWatchContainerCell.identifier, bundle: .main),
+            forCellReuseIdentifier: HomeRecentWatchContainerCell.identifier
+        )
+        self.tableView.register(
+            UINib(nibName: HomeRecommendContainerCell.identifier, bundle: .main),
             forCellReuseIdentifier: HomeRecommendContainerCell.identifier
         )
         self.tableView.register(
-            UINib(nibName: "HomeFooterCell", bundle: .main),
+            UINib(nibName: HomeFooterCell.identifier, bundle: .main),
             forCellReuseIdentifier: HomeFooterCell.identifier
         )
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "empty")
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    }
+    
+    private func bindViewModel()  {
+        self.homeViewModel.dataChanged = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -51,11 +68,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         switch section {
-            case.header:
+            case .header:
                 return 1
                 
             case .video:
                 return 2
+                
+            case .ranking:
+                return 1
+                
+            case .recentWatch:
+                return 1
                 
             case .recommend:
                 return 1
@@ -71,14 +94,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
         switch section {
-        case .header:
-            return HomeHeaderCell.height
-        case .video:
-            return HomeVideoCell.height
-        case .recommend:
-            return HomeRecommendContainerCell.height
-        case .footer:
-            return HomeFooterCell.height
+            case .header:
+                return HomeHeaderCell.height
+                
+            case .video:
+                return HomeVideoCell.height
+                
+            case .ranking:
+                return HomeRankingContainerCell.height
+                
+            case .recentWatch:
+                return HomeRecentWatchContainerCell.height
+                
+            case .recommend:
+                return HomeRecommendContainerCell.height
+            case .footer:
+                return HomeFooterCell.height
         }
     }
     
@@ -88,23 +119,71 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         switch section {
-                
-            case .header:
-                return tableView.dequeueReusableCell(withIdentifier: HomeHeaderCell.identifier, for: indexPath)
-                
-            case .video:
-                return tableView.dequeueReusableCell(withIdentifier: HomeVideoCell.identifier, for: indexPath)
-                
-            case .recommend:
-                let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendContainerCell.identifier, for: indexPath)
-                
-                (cell as? HomeRecommendContainerCell)?.delegate = self
-                
-                return cell
-                
-            case .footer:
-                return tableView.dequeueReusableCell(withIdentifier: HomeFooterCell.identifier, for: indexPath)
-                
+        case .header:
+            return tableView.dequeueReusableCell(
+                withIdentifier: HomeHeaderCell.identifier,
+                for: indexPath
+            )
+        case .video:
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeVideoCell.identifier,
+                for: indexPath
+            )
+            
+            if
+                let cell = cell as? HomeVideoCell,
+                let data = self.homeViewModel.home?.videos[indexPath.row] {
+                cell.setData(data)
+            }
+            
+            return cell
+        case .ranking:
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeRankingContainerCell.identifier,
+                for: indexPath
+            )
+            
+            if
+                let cell = cell as? HomeRankingContainerCell,
+                let data = self.homeViewModel.home?.rankings {
+                cell.setData(data)
+                cell.delegate = self
+            }
+            
+            return cell
+        case .recentWatch:
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeRecentWatchContainerCell.identifier,
+                for: indexPath
+            )
+            
+            if
+                let cell = cell as? HomeRecentWatchContainerCell,
+                let data = self.homeViewModel.home?.recents {
+                cell.delegate = self
+                cell.setData(data)
+            }
+            
+            return cell
+        case .recommend:
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeRecommendContainerCell.identifier,
+                for: indexPath
+            )
+            
+            if
+                let cell = cell as? HomeRecommendContainerCell,
+                let data = self.homeViewModel.home?.recommends {
+                cell.delegate = self
+                cell.setData(data)
+            }
+            
+            return cell
+        case .footer:
+            return tableView.dequeueReusableCell(
+                withIdentifier: HomeFooterCell.identifier,
+                for: indexPath
+            )
         }
     }
     
@@ -114,5 +193,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: HomeRecommendContainerCellDelegate {
     func homeRecommendContainerCell(_ cell: HomeRecommendContainerCell, didSelectItemAt index: Int) {
         print("home recommend cell did select item at \(index)")
+    }
+}
+
+extension HomeViewController: HomeRankingContainerCellDelegate {
+    func homeRankingContainerCell(_ cell: HomeRankingContainerCell, didSelectItemAt index: Int) {
+        print("home ranking cell did select item at \(index)")
+    }
+}
+
+extension HomeViewController: HomeRecentWatchContainerDelegate {
+    func homeRecentWatchItemCell(_ cell: HomeRecentWatchContainerCell, _ indexPath: Int) {
+        print("home recent watch cell did select item at \(indexPath)")
     }
 }

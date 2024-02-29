@@ -58,28 +58,6 @@
                                     <constraint firstAttribute="height" constant="45" id="lzC-EZ-qxU"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uid-04-VIE">
-                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnb-lI-dHs">
-                                        <rect key="frame" x="5.6666666666666679" y="2" width="5" height="12"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="12" id="cM7-iB-rNW"/>
-                                            <constraint firstAttribute="width" constant="5" id="vWF-xn-mWt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="main-yellow"/>
-                                <constraints>
-                                    <constraint firstItem="mnb-lI-dHs" firstAttribute="centerY" secondItem="Uid-04-VIE" secondAttribute="centerY" id="2nZ-nh-vZJ"/>
-                                    <constraint firstAttribute="height" constant="16" id="Fa0-nz-ab7"/>
-                                    <constraint firstItem="mnb-lI-dHs" firstAttribute="centerX" secondItem="Uid-04-VIE" secondAttribute="centerX" id="QBf-gN-DB5"/>
-                                    <constraint firstAttribute="width" constant="16" id="Xwq-av-ZTZ"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:43" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdA-lT-And">
                                 <rect key="frame" x="72" y="39" width="30" height="15"/>
                                 <color key="backgroundColor" name="bk-origin"/>
@@ -91,17 +69,28 @@
                                 <color key="textColor" name="main-wh"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoS-7H-WqD">
+                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                <color key="backgroundColor" name="main-yellow"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="45E-CO-HUB"/>
+                                    <constraint firstAttribute="height" constant="16" id="WTJ-x9-wqO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                <color key="textColor" name="bk-origin"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="bk-origin"/>
                         <constraints>
+                            <constraint firstItem="MoS-7H-WqD" firstAttribute="leading" secondItem="QyI-BF-s2v" secondAttribute="leading" id="78M-fy-O2S"/>
                             <constraint firstItem="tmD-LW-6KR" firstAttribute="bottom" secondItem="EdA-lT-And" secondAttribute="bottom" constant="5" id="9Ih-3k-QgD"/>
                             <constraint firstItem="fSF-s8-abb" firstAttribute="leading" secondItem="QyI-BF-s2v" secondAttribute="leading" constant="117" id="B1c-Pq-2DU"/>
                             <constraint firstItem="tmD-LW-6KR" firstAttribute="leading" secondItem="QyI-BF-s2v" secondAttribute="leading" id="Bfk-dN-sCL"/>
                             <constraint firstItem="tmD-LW-6KR" firstAttribute="top" secondItem="QyI-BF-s2v" secondAttribute="top" id="Bw2-Wq-LZi"/>
-                            <constraint firstItem="Uid-04-VIE" firstAttribute="leading" secondItem="tmD-LW-6KR" secondAttribute="leading" id="XFo-Bt-2GI"/>
-                            <constraint firstItem="Uid-04-VIE" firstAttribute="top" secondItem="tmD-LW-6KR" secondAttribute="top" id="XxU-TL-axk"/>
                             <constraint firstItem="fSF-s8-abb" firstAttribute="top" secondItem="QyI-BF-s2v" secondAttribute="top" constant="7" id="cED-ZM-3am"/>
                             <constraint firstItem="tmD-LW-6KR" firstAttribute="trailing" secondItem="EdA-lT-And" secondAttribute="trailing" constant="5" id="ost-71-SSD"/>
+                            <constraint firstItem="MoS-7H-WqD" firstAttribute="top" secondItem="QyI-BF-s2v" secondAttribute="top" id="pay-g9-XLW"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -115,9 +104,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="badgeContainerView" destination="Uid-04-VIE" id="YDc-K8-QyV"/>
+                <outlet property="rankLabel" destination="MoS-7H-WqD" id="3jF-YL-nG8"/>
+                <outlet property="subtitleLabel" destination="h5Q-d2-qkV" id="SqD-CX-buu"/>
                 <outlet property="thumbnailImageView" destination="tmD-LW-6KR" id="XGV-yg-htj"/>
                 <outlet property="timeLabel" destination="EdA-lT-And" id="cuZ-v1-et0"/>
+                <outlet property="titlelLabel" destination="Vkb-Hr-Dhm" id="OvW-fO-H0b"/>
             </connections>
             <point key="canvasLocation" x="129.00763358778624" y="-11.267605633802818"/>
         </tableViewCell>
