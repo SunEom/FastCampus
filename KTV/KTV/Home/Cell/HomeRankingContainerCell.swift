@@ -9,33 +9,24 @@ import UIKit
 
 protocol HomeRankingContainerCellDelegate: AnyObject {
     func homeRankingContainerCell(_ cell: HomeRankingContainerCell, didSelectItemAt index: Int)
-    
 }
 
-class HomeRankingContainerCell: UITableViewCell {
-
+class HomeRankingContainerCell: UICollectionViewCell {
     static let identifier: String = "HomeRankingContainerCell"
-    static let height: CGFloat = 349
+    static let height: CGFloat = 265
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: HomeRankingContainerCellDelegate?
     private var rankings: [Home.Ranking]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         self.collectionView.register(
             UINib(nibName: HomeRankingItemCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: HomeRankingItemCell.identifier
         )
-        self.collectionView.delegate = self
         self.collectionView.dataSource = self
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        self.collectionView.delegate = self
     }
     
     func setData(_ data: [Home.Ranking]) {

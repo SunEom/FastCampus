@@ -11,7 +11,7 @@ protocol HomeRecentWatchContainerDelegate: AnyObject {
     func homeRecentWatchItemCell(_ cell: HomeRecentWatchContainerCell, _ indexPath: Int)
 }
 
-class HomeRecentWatchContainerCell: UITableViewCell {
+class HomeRecentWatchContainerCell: UICollectionViewCell {
 
     static let identifier: String = "HomeRecentWatchContainerCell"
     static let height: CGFloat = 209
@@ -33,12 +33,6 @@ class HomeRecentWatchContainerCell: UITableViewCell {
         self.collectionView.layer.cornerRadius = 10
         self.collectionView.layer.borderColor = UIColor(named: "stroke-light")?.cgColor
         self.collectionView.layer.borderWidth = 1
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func setData(_ data: [Home.Recent]) {

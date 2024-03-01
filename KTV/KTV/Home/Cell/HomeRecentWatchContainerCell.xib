@@ -5,21 +5,21 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeRecentWatchContainerCell" customModule="KTV" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xpr-LN-OmF" customClass="HomeRecentWatchContainerCell" customModule="KTV" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8mx-SQ-JFN">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sWw-r7-1mC">
-                        <rect key="frame" x="16" y="0.0" width="288" height="189"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
                         <color key="backgroundColor" name="bk-origin"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="189" id="Bpf-bY-NvC"/>
@@ -34,17 +34,16 @@
                 </subviews>
                 <color key="backgroundColor" name="bg"/>
                 <constraints>
-                    <constraint firstItem="sWw-r7-1mC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9RH-C5-zMC"/>
-                    <constraint firstAttribute="trailing" secondItem="sWw-r7-1mC" secondAttribute="trailing" constant="16" id="gRw-1z-0or"/>
-                    <constraint firstItem="sWw-r7-1mC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xnb-W9-g73"/>
+                    <constraint firstAttribute="trailing" secondItem="sWw-r7-1mC" secondAttribute="trailing" id="Aio-aw-MnD"/>
+                    <constraint firstItem="sWw-r7-1mC" firstAttribute="leading" secondItem="8mx-SQ-JFN" secondAttribute="leading" id="FDt-Qf-ayj"/>
+                    <constraint firstItem="sWw-r7-1mC" firstAttribute="top" secondItem="8mx-SQ-JFN" secondAttribute="top" id="VDm-hz-aGT"/>
                 </constraints>
-            </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            </collectionViewCellContentView>
             <connections>
-                <outlet property="collectionView" destination="sWw-r7-1mC" id="K5g-EC-Bql"/>
+                <outlet property="collectionView" destination="sWw-r7-1mC" id="Muy-EZ-ME5"/>
             </connections>
-            <point key="canvasLocation" x="129.7709923664122" y="-11.619718309859156"/>
-        </tableViewCell>
+            <point key="canvasLocation" x="421" y="200"/>
+        </collectionViewCell>
     </objects>
     <resources>
         <namedColor name="bg">
