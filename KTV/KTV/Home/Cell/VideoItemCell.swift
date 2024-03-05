@@ -1,5 +1,5 @@
 //
-//  HomeRecommendItemCell.swift
+//  VideoItemCell.swift
 //  KTV
 //
 //  Created by 엄태양 on 2/28/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeRecommendItemCell: UITableViewCell {
+class VideoItemCell: UITableViewCell {
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -16,7 +16,8 @@ class HomeRecommendItemCell: UITableViewCell {
     @IBOutlet weak var subtitleLabel: UILabel!
     
     static let height: CGFloat = 70
-    static let identifier: String = "HomeRecommendItemCell"
+    static let identifier: String = "VideoItemCell"
+    
     private static let timeFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .positional
@@ -24,6 +25,7 @@ class HomeRecommendItemCell: UITableViewCell {
         formatter.allowedUnits = [.minute, .second]
         return formatter
     }()
+    
     private var imageTask: Task<Void, Never>?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +35,8 @@ class HomeRecommendItemCell: UITableViewCell {
         rankLabel.clipsToBounds = true
         timeLabel.layer.cornerRadius = 3
         timeLabel.clipsToBounds = true
+        
+        self.backgroundConfiguration = .clear()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,7 +45,7 @@ class HomeRecommendItemCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(_ data: Home.Recommend, rank: Int? ){
+    func setData(_ data: VideoListItem, rank: Int? ){
         self.rankLabel.isHidden = rank == nil
         if let rank {
             self.rankLabel.text = "\(rank)"
@@ -53,5 +57,5 @@ class HomeRecommendItemCell: UITableViewCell {
         )
         self.imageTask = self.thumbnailImageView.loadImage(url: data.imageUrl)
     }
-    
+
 }

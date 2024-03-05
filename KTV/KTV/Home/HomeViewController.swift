@@ -130,7 +130,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         
         let inset = self.insetForSection(section)
         let width = collectionView.frame.width - inset.left - inset.right
-        print(width, inset)
         
         switch section {
         case .header, .footer:

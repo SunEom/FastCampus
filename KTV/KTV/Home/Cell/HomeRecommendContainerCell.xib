@@ -30,6 +30,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ocJ-e0-npn">
                                 <rect key="frame" x="26" y="78" width="268" height="372"/>
                                 <color key="backgroundColor" name="bk-origin"/>
+                                <color key="separatorColor" name="bk-origin"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dj-do-rzU">
                                 <rect key="frame" x="0.0" y="450" width="320" height="28"/>
