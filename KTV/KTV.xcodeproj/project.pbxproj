@@ -62,6 +62,7 @@
 		BF7750FC2B986CBD008AE7F3 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7750FB2B986CBD008AE7F3 /* MoreViewModel.swift */; };
 		BF7750FE2B987139008AE7F3 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7750FD2B987139008AE7F3 /* Video.swift */; };
 		BF7751002B9871A6008AE7F3 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7750FF2B9871A6008AE7F3 /* VideoViewModel.swift */; };
+		BF7751032B994EB8008AE7F3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7751022B994EB8008AE7F3 /* PlayerView.swift */; };
 		BFFD3DB62B8E4A2A0072EFC8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD3DB52B8E4A2A0072EFC8 /* HomeViewController.swift */; };
 		BFFD3DBA2B8E4B0A0072EFC8 /* HomeVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD3DB82B8E4B0A0072EFC8 /* HomeVideoCell.swift */; };
 		BFFD3DBB2B8E4B0A0072EFC8 /* HomeVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFD3DB92B8E4B0A0072EFC8 /* HomeVideoCell.xib */; };
@@ -150,6 +151,7 @@
 		BF7750FB2B986CBD008AE7F3 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
 		BF7750FD2B987139008AE7F3 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		BF7750FF2B9871A6008AE7F3 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		BF7751022B994EB8008AE7F3 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		BFFD3DB52B8E4A2A0072EFC8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BFFD3DB82B8E4B0A0072EFC8 /* HomeVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCell.swift; sourceTree = "<group>"; };
 		BFFD3DB92B8E4B0A0072EFC8 /* HomeVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideoCell.xib; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				BF7750EE2B985836008AE7F3 /* VideoViewController.swift */,
 				BF7750EF2B985836008AE7F3 /* VideoViewController.xib */,
 				BF7750FF2B9871A6008AE7F3 /* VideoViewModel.swift */,
+				BF7751022B994EB8008AE7F3 /* PlayerView.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				BF45111A2B90B42C00B3330D /* UIImageView+Task.swift in Sources */,
 				BF7750D62B96CB20008AE7F3 /* MyViewController.swift in Sources */,
 				BF4510EA2B8EFA5F00B3330D /* HomeRecommendContainerCell.swift in Sources */,
+				BF7751032B994EB8008AE7F3 /* PlayerView.swift in Sources */,
 				BF7750E02B96CC2B008AE7F3 /* FavoriteViewController.swift in Sources */,
 				BFFD3DB62B8E4A2A0072EFC8 /* HomeViewController.swift in Sources */,
 				BF7750DD2B96CC1B008AE7F3 /* BookmarkCell.swift in Sources */,

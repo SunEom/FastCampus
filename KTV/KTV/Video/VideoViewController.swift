@@ -24,6 +24,8 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var recommendTableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var playerView: PlayerView!
+    
     private var contentSizeObservation: NSKeyValueObservation?
     private let viewModel: VideoViewModel = .init()
     private static let dateFormatter: DateFormatter = {
@@ -53,6 +55,7 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.playerView.delegate = self
         self.channelThumbnailImageView.layer.cornerRadius = 14
         self.setupRecommendTableView()
         self.bindViewModel()
@@ -66,6 +69,8 @@ class VideoViewController: UIViewController {
     }
     
     private func setupData(_ video: Video) {
+        self.playerView.set(url: video.videoURL)
+        self.playerView.play()
         self.titleLabel.text = video.title
         self.channelThumbnailImageView.loadImage(url: video.channelImageUrl)
         self.channelNameLabel.text = video.channel
@@ -84,6 +89,7 @@ extension VideoViewController {
         self.isControlPannelHidden.toggle()
     }
     @IBAction func closeDidTap(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     @IBAction func moreDidTap(_ sender: Any) {
         let moreVC = MoreViewController()
@@ -91,14 +97,28 @@ extension VideoViewController {
         
     }
     @IBAction func playDidTap(_ sender: Any) {
+        if self.playerView.isPlaying {
+            self.playerView.pause()
+        } else {
+            self.playerView.play()
+        }
+        
+        self.updatePlayButton(isPlaying: self.playerView.isPlaying)
     }
     @IBAction func rewindDidTap(_ sender: Any) {
+        self.playerView.rewind()
     }
     @IBAction func fastfowardDidTap(_ sender: Any) {
+        self.playerView.forwad()
     }
     @IBAction func expandDidTap(_ sender: Any) {
     }
     @IBAction func commentDidTap(_ sender: Any) {
+    }
+    
+    private func updatePlayButton(isPlaying: Bool) {
+        let playImage = isPlaying ? UIImage(named: "small_pause") : UIImage(named: "small_play")
+        self.playButton.setImage(playImage, for: .normal)
     }
     
     
@@ -137,5 +157,20 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension VideoViewController: PlayerViewDelegate {
+    func playerViewReadyToPlay(_ playerView: PlayerView) {
+        self.updatePlayButton(isPlaying: playerView.isPlaying)
+    }
+    
+    func playerView(_ playerView: PlayerView, didPlay playTime: Double, playableTime: Double) {
+        
+    }
+    
+    func playerViewDidFinishToPlay(_ playerView: PlayerView) {
+        self.playerView.seek(to: 0)
+        self.updatePlayButton(isPlaying: false)
     }
 }
