@@ -18,14 +18,6 @@ class VideoItemCell: UITableViewCell {
     static let height: CGFloat = 70
     static let identifier: String = "VideoItemCell"
     
-    private static let timeFormatter: DateComponentsFormatter = {
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .positional
-        formatter.zeroFormattingBehavior = .pad
-        formatter.allowedUnits = [.minute, .second]
-        return formatter
-    }()
-    
     private var imageTask: Task<Void, Never>?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,7 +44,7 @@ class VideoItemCell: UITableViewCell {
         }
         self.titlelLabel.text = data.title
         self.subtitleLabel.text = data.channel
-        self.timeLabel.text = Self.timeFormatter.string(
+        self.timeLabel.text = DateComponentsFormatter.playTimeFormatter.string(
             from: data.playtime
         )
         self.imageTask = self.thumbnailImageView.loadImage(url: data.imageUrl)

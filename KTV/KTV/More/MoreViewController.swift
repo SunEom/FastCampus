@@ -39,6 +39,18 @@ class MoreViewController: UIViewController {
         self.setupConerRadius()
 
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.setupConerRadius()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate { _ in
+            self.setupConerRadius()
+        }
+        super.viewWillTransition(to: size, with: coordinator)
+    }
 
     @IBAction func closeDidtap(_ sender: Any) {
         self.dismiss(animated: false)
