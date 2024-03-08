@@ -43,6 +43,11 @@
 		BF4511222B91E0D100B3330D /* HomeRankingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4511202B91E0D100B3330D /* HomeRankingHeaderView.xib */; };
 		BF4511242B91F97500B3330D /* HomeRecommendContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4511232B91F97500B3330D /* HomeRecommendContainerCell.xib */; };
 		BF59DBA72B9B062700A89E3A /* DateComponentsFomatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBA62B9B062700A89E3A /* DateComponentsFomatter+Extensions.swift */; };
+		BF59DBAA2B9B10C400A89E3A /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBA92B9B10C400A89E3A /* LiveViewController.swift */; };
+		BF59DBAD2B9B141400A89E3A /* LiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBAB2B9B141400A89E3A /* LiveCell.swift */; };
+		BF59DBAE2B9B141400A89E3A /* LiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF59DBAC2B9B141400A89E3A /* LiveCell.xib */; };
+		BF59DBB02B9B1BC900A89E3A /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBAF2B9B1BC900A89E3A /* Live.swift */; };
+		BF59DBB22B9B1C0E00A89E3A /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59DBB12B9B1C0E00A89E3A /* LiveViewModel.swift */; };
 		BF7750D62B96CB20008AE7F3 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7750D52B96CB20008AE7F3 /* MyViewController.swift */; };
 		BF7750D82B96CBEA008AE7F3 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7750D72B96CBEA008AE7F3 /* BookmarkViewController.swift */; };
 		BF7750DA2B96CBFF008AE7F3 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7750D92B96CBFF008AE7F3 /* BookmarkViewModel.swift */; };
@@ -134,6 +139,11 @@
 		BF4511202B91E0D100B3330D /* HomeRankingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRankingHeaderView.xib; sourceTree = "<group>"; };
 		BF4511232B91F97500B3330D /* HomeRecommendContainerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRecommendContainerCell.xib; sourceTree = "<group>"; };
 		BF59DBA62B9B062700A89E3A /* DateComponentsFomatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFomatter+Extensions.swift"; sourceTree = "<group>"; };
+		BF59DBA92B9B10C400A89E3A /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		BF59DBAB2B9B141400A89E3A /* LiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCell.swift; sourceTree = "<group>"; };
+		BF59DBAC2B9B141400A89E3A /* LiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCell.xib; sourceTree = "<group>"; };
+		BF59DBAF2B9B1BC900A89E3A /* Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live.swift; sourceTree = "<group>"; };
+		BF59DBB12B9B1C0E00A89E3A /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
 		BF7750D52B96CB20008AE7F3 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BF7750D72B96CBEA008AE7F3 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		BF7750D92B96CBFF008AE7F3 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
@@ -215,6 +225,7 @@
 		BF175C502B8E390D00FE67A5 /* KTV */ = {
 			isa = PBXGroup;
 			children = (
+				BF59DBA82B9B10A600A89E3A /* Live */,
 				BF59DBA52B9B05F600A89E3A /* Extensions */,
 				BF7750F22B98697F008AE7F3 /* More */,
 				BF7750ED2B985822008AE7F3 /* Video */,
@@ -262,6 +273,7 @@
 				BF7750E52B96D04A008AE7F3 /* Bookmark.swift */,
 				BF7750E92B96D8DC008AE7F3 /* VideoListItem.swift */,
 				BF7750FD2B987139008AE7F3 /* Video.swift */,
+				BF59DBAF2B9B1BC900A89E3A /* Live.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +313,17 @@
 				BF59DBA62B9B062700A89E3A /* DateComponentsFomatter+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF59DBA82B9B10A600A89E3A /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				BF59DBA92B9B10C400A89E3A /* LiveViewController.swift */,
+				BF59DBAB2B9B141400A89E3A /* LiveCell.swift */,
+				BF59DBAC2B9B141400A89E3A /* LiveCell.xib */,
+				BF59DBB12B9B1C0E00A89E3A /* LiveViewModel.swift */,
+			);
+			path = Live;
 			sourceTree = "<group>";
 		};
 		BF7750D02B96C8F3008AE7F3 /* My */ = {
@@ -522,6 +545,7 @@
 				BF7750F12B985836008AE7F3 /* VideoViewController.xib in Resources */,
 				BF4510FE2B8F175B00B3330D /* HomeRecentWatchContainerCell.xib in Resources */,
 				BF4511112B90AEE600B3330D /* live.json in Resources */,
+				BF59DBAE2B9B141400A89E3A /* LiveCell.xib in Resources */,
 				BF175C592B8E390D00FE67A5 /* Main.storyboard in Resources */,
 				BF7750DE2B96CC1B008AE7F3 /* BookmarkCell.xib in Resources */,
 				BF4511142B90AEE600B3330D /* home.json in Resources */,
@@ -572,6 +596,7 @@
 				BF7750F92B986B84008AE7F3 /* MoreTableViewCell.swift in Sources */,
 				BFFD3DC22B8EF00D0072EFC8 /* HomeHeaderView.swift in Sources */,
 				BF4510F92B8F129300B3330D /* HomeRankingItemCell.swift in Sources */,
+				BF59DBAA2B9B10C400A89E3A /* LiveViewController.swift in Sources */,
 				BF45111C2B91D5AB00B3330D /* HomeRecommendViewModel.swift in Sources */,
 				BF4510E52B8EF5E000B3330D /* VideoItemCell.swift in Sources */,
 				BF4510ED2B8F092800B3330D /* HomeRankingContainerCell.swift in Sources */,
@@ -580,6 +605,7 @@
 				BF7750E82B96D074008AE7F3 /* Favorite.swift in Sources */,
 				BF4511192B90B42C00B3330D /* DataLoader.swift in Sources */,
 				BF175C522B8E390D00FE67A5 /* AppDelegate.swift in Sources */,
+				BF59DBB02B9B1BC900A89E3A /* Live.swift in Sources */,
 				BFFD3DBD2B8E53710072EFC8 /* HomeSection.swift in Sources */,
 				BF4511012B8F184200B3330D /* HomeRecentWatchItemCell.swift in Sources */,
 				BF7751002B9871A6008AE7F3 /* VideoViewModel.swift in Sources */,
@@ -589,12 +615,14 @@
 				BFFD3DBA2B8E4B0A0072EFC8 /* HomeVideoCell.swift in Sources */,
 				BF45111A2B90B42C00B3330D /* UIImageView+Task.swift in Sources */,
 				BF59DBA72B9B062700A89E3A /* DateComponentsFomatter+Extensions.swift in Sources */,
+				BF59DBAD2B9B141400A89E3A /* LiveCell.swift in Sources */,
 				BF7750D62B96CB20008AE7F3 /* MyViewController.swift in Sources */,
 				BF4510EA2B8EFA5F00B3330D /* HomeRecommendContainerCell.swift in Sources */,
 				BF7751032B994EB8008AE7F3 /* PlayerView.swift in Sources */,
 				BF7750E02B96CC2B008AE7F3 /* FavoriteViewController.swift in Sources */,
 				BFFD3DB62B8E4A2A0072EFC8 /* HomeViewController.swift in Sources */,
 				BF7750DD2B96CC1B008AE7F3 /* BookmarkCell.swift in Sources */,
+				BF59DBB22B9B1C0E00A89E3A /* LiveViewModel.swift in Sources */,
 				BF4511052B90A2F800B3330D /* Home.swift in Sources */,
 				BFFD3DBF2B8E554F0072EFC8 /* TabbarController.swift in Sources */,
 			);

@@ -92,17 +92,119 @@
             </objects>
             <point key="canvasLocation" x="2892.3664122137402" y="-736.61971830985919"/>
         </scene>
-        <!--View Controller-->
+        <!--Live View Controller-->
         <scene sceneID="91w-QE-gjv">
             <objects>
-                <viewController id="adf-j0-mwD" sceneMemberID="viewController">
+                <viewController id="adf-j0-mwD" customClass="LiveViewController" customModule="KTV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aAU-sq-QiK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이브 체널" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONW-m7-SzG">
+                                <rect key="frame" x="30" y="79" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" name="main-wh"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzO-sH-fsT">
+                                <rect key="frame" x="16" y="145" width="361" height="588"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atx-wL-Rhe">
+                                        <rect key="frame" x="14" y="23" width="333" height="22"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVB-ha-4Uv">
+                                                <rect key="frame" x="268" y="-3.3333333333333428" width="65" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="방송 시작순">
+                                                    <color key="titleColor" name="gray-2"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" name="main-wh"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sortDidTap:" destination="adf-j0-mwD" eventType="touchUpInside" id="wGI-dd-nsd"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4F1-16-IVZ">
+                                                <rect key="frame" x="264" y="6" width="1" height="11"/>
+                                                <color key="backgroundColor" name="gray-2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="Owc-u7-ccx"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRl-qS-gj1">
+                                                <rect key="frame" x="224" y="-3.3333333333333428" width="37" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="인기순">
+                                                    <color key="titleColor" name="gray-2"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" name="main-wh"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sortDidTap:" destination="adf-j0-mwD" eventType="touchUpInside" id="MnL-vt-aRQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fVB-ha-4Uv" firstAttribute="centerY" secondItem="atx-wL-Rhe" secondAttribute="centerY" id="12U-6g-ZIg"/>
+                                            <constraint firstAttribute="height" constant="22" id="9X1-tp-tLg"/>
+                                            <constraint firstAttribute="trailing" secondItem="fVB-ha-4Uv" secondAttribute="trailing" id="AeX-vn-ttq"/>
+                                            <constraint firstAttribute="bottom" secondItem="4F1-16-IVZ" secondAttribute="bottom" constant="5" id="SGo-ZA-fTV"/>
+                                            <constraint firstItem="lRl-qS-gj1" firstAttribute="centerY" secondItem="atx-wL-Rhe" secondAttribute="centerY" id="fTo-Ie-Vcv"/>
+                                            <constraint firstItem="4F1-16-IVZ" firstAttribute="leading" secondItem="lRl-qS-gj1" secondAttribute="trailing" constant="3" id="hok-ab-YGq"/>
+                                            <constraint firstItem="fVB-ha-4Uv" firstAttribute="leading" secondItem="4F1-16-IVZ" secondAttribute="trailing" constant="3" id="np9-vD-f28"/>
+                                            <constraint firstItem="lRl-qS-gj1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="atx-wL-Rhe" secondAttribute="leading" id="qRW-4u-SvB"/>
+                                            <constraint firstItem="4F1-16-IVZ" firstAttribute="top" secondItem="atx-wL-Rhe" secondAttribute="top" constant="6" id="voL-yS-qwO"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mpH-Ef-k2Z">
+                                        <rect key="frame" x="14" y="78" width="333" height="491"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="bQj-wm-bnd">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" name="more-bk"/>
+                                <constraints>
+                                    <constraint firstItem="mpH-Ef-k2Z" firstAttribute="top" secondItem="atx-wL-Rhe" secondAttribute="bottom" constant="33" id="5zU-Zs-rIr"/>
+                                    <constraint firstAttribute="trailing" secondItem="mpH-Ef-k2Z" secondAttribute="trailing" constant="14" id="A9w-7Q-7eF"/>
+                                    <constraint firstItem="atx-wL-Rhe" firstAttribute="top" secondItem="yzO-sH-fsT" secondAttribute="top" constant="23" id="GrN-A0-vjF"/>
+                                    <constraint firstItem="mpH-Ef-k2Z" firstAttribute="leading" secondItem="yzO-sH-fsT" secondAttribute="leading" constant="14" id="Knd-NR-XOT"/>
+                                    <constraint firstAttribute="trailing" secondItem="atx-wL-Rhe" secondAttribute="trailing" constant="14" id="flI-ik-u9d"/>
+                                    <constraint firstAttribute="bottom" secondItem="mpH-Ef-k2Z" secondAttribute="bottom" constant="19" id="ihE-62-Ryq"/>
+                                    <constraint firstItem="atx-wL-Rhe" firstAttribute="leading" secondItem="yzO-sH-fsT" secondAttribute="leading" constant="14" id="riO-KX-94N"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VT3-zf-wMX"/>
                         <color key="backgroundColor" name="bg"/>
+                        <constraints>
+                            <constraint firstItem="VT3-zf-wMX" firstAttribute="trailing" secondItem="ONW-m7-SzG" secondAttribute="trailing" constant="30" id="6cl-wS-yxN"/>
+                            <constraint firstItem="VT3-zf-wMX" firstAttribute="trailing" secondItem="yzO-sH-fsT" secondAttribute="trailing" constant="16" id="Fam-04-gkb"/>
+                            <constraint firstItem="ONW-m7-SzG" firstAttribute="leading" secondItem="VT3-zf-wMX" secondAttribute="leading" constant="30" id="ITQ-Lw-EMs"/>
+                            <constraint firstItem="yzO-sH-fsT" firstAttribute="top" secondItem="ONW-m7-SzG" secondAttribute="bottom" constant="45" id="SEq-bE-SqU"/>
+                            <constraint firstItem="VT3-zf-wMX" firstAttribute="bottom" secondItem="yzO-sH-fsT" secondAttribute="bottom" constant="36" id="T3x-Ad-nmq"/>
+                            <constraint firstItem="ONW-m7-SzG" firstAttribute="top" secondItem="VT3-zf-wMX" secondAttribute="top" constant="20" id="UGw-cC-nnn"/>
+                            <constraint firstItem="yzO-sH-fsT" firstAttribute="leading" secondItem="VT3-zf-wMX" secondAttribute="leading" constant="16" id="dsu-uS-cYT"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabIcon_live" selectedImage="tabIcon_live_selected" id="cEh-Te-fS4"/>
+                    <connections>
+                        <outlet property="collectionView" destination="mpH-Ef-k2Z" id="dFS-C0-8d2"/>
+                        <outlet property="containerView" destination="yzO-sH-fsT" id="SfT-8T-WuR"/>
+                        <outlet property="favoriteButton" destination="lRl-qS-gj1" id="450-3e-xJV"/>
+                        <outlet property="startTimeButton" destination="fVB-ha-4Uv" id="bEK-Gz-zoe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMv-df-3c0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,6 +452,9 @@
         <namedColor name="bg">
             <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="gray-2">
+            <color red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="icon-on">
             <color red="0.36862745098039218" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -361,6 +466,9 @@
         </namedColor>
         <namedColor name="main-yellow">
             <color red="0.99215686274509807" green="0.89411764705882357" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="more-bk">
+            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="stroke-light">
             <color red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
