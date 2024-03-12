@@ -10,6 +10,7 @@ import UIKit
 class HomeRecentWatchItemCell: UICollectionViewCell {
 
     static let identifier: String = "HomeRecentWatchItemCell"
+    static let size: CGSize = .init(width: 84, height: 148)
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
