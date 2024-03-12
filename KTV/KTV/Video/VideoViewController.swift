@@ -9,6 +9,8 @@ import UIKit
 
 class VideoViewController: UIViewController {
 
+    private let chattingHiddenBottomConstant: CGFloat = -500
+    
     //MARK: - 제어패널
     @IBOutlet weak var portraitControlPannel: UIView!
     @IBOutlet weak var playButton: UIButton!
@@ -32,6 +34,10 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var landscapeTitleLabel: UILabel!
     @IBOutlet weak var seekbar: SeekbarView!
     @IBOutlet weak var landscapePlayTimeLabel: UILabel!
+    
+    @IBOutlet weak var chattingView: ChattingView!
+    var isLiveMode: Bool = false
+    @IBOutlet weak var chattingBottomConstraints: NSLayoutConstraint!
     
     private var contentSizeObservation: NSKeyValueObservation?
     private let viewModel: VideoViewModel = .init()
@@ -69,17 +75,29 @@ class VideoViewController: UIViewController {
 
         self.playerView.delegate = self
         self.seekbar.delegate = self
+        self.chattingView.delegate = self
         self.channelThumbnailImageView.layer.cornerRadius = 14
         self.setupRecommendTableView()
         self.bindViewModel()
         self.viewModel.requestData()
+        self.chattingView.isHidden = !self.isLiveMode
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
+        self.chattingView.textField.resignFirstResponder()
         self.switchControlPannel(size: size)
         self.playerViewBottomConstraint.isActive = self.isLandscape(size: size)
+        if self.isLandscape(size: size) {
+            self.chattingBottomConstraints.constant = self.chattingHiddenBottomConstant
+        } else {
+            self.chattingBottomConstraints.constant = 0
+        }
         super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate { _ in
+            self.chattingView.collectionView.collectionViewLayout.invalidateLayout()
+        }
     }
     
     private func isLandscape(size: CGSize) -> Bool {
@@ -150,6 +168,9 @@ extension VideoViewController {
         self.rotateScene(landscape: true)
     }
     @IBAction func commentDidTap(_ sender: Any) {
+        if self.isLiveMode {
+            self.chattingView.isHidden = false
+        }
     }
     @IBAction func shrinkDidTap(_ sender: Any) {
         self.rotateScene(landscape: false)
@@ -247,5 +268,11 @@ extension VideoViewController: PlayerViewDelegate {
         }
         
         self.landscapePlayTimeLabel.text = "\(playTimeText) / \(totalPlayTimeText)"
+    }
+}
+
+extension VideoViewController: ChattingViewDelegate {
+    func liveChattingViewCloseDidTap(_ chattingView: ChattingView) {
+        self.chattingView.isHidden = true
     }
 }

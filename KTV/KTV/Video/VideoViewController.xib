@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="channelNameLabel" destination="UBP-yL-rEi" id="fdE-PS-f1O"/>
                 <outlet property="channelThumbnailImageView" destination="XwP-4H-qjW" id="YlN-E9-cZA"/>
+                <outlet property="chattingBottomConstraints" destination="eru-ZR-vo2" id="ZP3-Ii-tH4"/>
+                <outlet property="chattingView" destination="VbX-oq-T8p" id="db0-d4-oUs"/>
                 <outlet property="commentButton" destination="KIh-Tr-GPh" id="MFH-u9-lv1"/>
                 <outlet property="favoriteButton" destination="Ayb-RL-0E2" id="ukt-L4-tQa"/>
                 <outlet property="landScapeControlPannel" destination="YRo-d4-Vvx" id="hk2-9E-ZBd"/>
@@ -487,17 +489,109 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="tqO-Df-Uv7"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="dte-7K-R4w"/>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbX-oq-T8p" customClass="ChattingView" customModule="KTV" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="280" width="393" height="572"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrH-Gm-GYl">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="67"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이브 채팅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byz-Al-c50">
+                                    <rect key="frame" x="30" y="23" width="78" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <color key="textColor" name="main-wh"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsG-sd-bRh">
+                                    <rect key="frame" x="323" y="13.666666666666686" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="mlR-MV-euq"/>
+                                        <constraint firstAttribute="width" constant="40" id="zy6-V6-OQa"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="small_close"/>
+                                    <connections>
+                                        <action selector="closeDidTap:" destination="VbX-oq-T8p" eventType="touchUpInside" id="feY-GN-vGE"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Byz-Al-c50" firstAttribute="centerY" secondItem="qrH-Gm-GYl" secondAttribute="centerY" id="0Fx-db-LgC"/>
+                                <constraint firstItem="CsG-sd-bRh" firstAttribute="centerY" secondItem="qrH-Gm-GYl" secondAttribute="centerY" id="KOf-R8-CWB"/>
+                                <constraint firstAttribute="height" constant="67" id="XAt-n6-B8K"/>
+                                <constraint firstAttribute="trailing" secondItem="CsG-sd-bRh" secondAttribute="trailing" constant="30" id="XJI-da-0b8"/>
+                                <constraint firstItem="Byz-Al-c50" firstAttribute="leading" secondItem="qrH-Gm-GYl" secondAttribute="leading" constant="30" id="dP9-i5-ZKP"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frg-vC-zvx">
+                            <rect key="frame" x="0.0" y="458" width="393" height="80"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UZ-sp-ugG">
+                                    <rect key="frame" x="24" y="7" width="345" height="36"/>
+                                    <color key="backgroundColor" name="chat-bg"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="FOR-7I-Enx"/>
+                                    </constraints>
+                                    <color key="textColor" name="chat-text"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="8UZ-sp-ugG" firstAttribute="leading" secondItem="frg-vC-zvx" secondAttribute="leading" constant="24" id="58C-Zn-HIg"/>
+                                <constraint firstItem="8UZ-sp-ugG" firstAttribute="top" secondItem="frg-vC-zvx" secondAttribute="top" constant="7" id="TIc-Ky-0Zi"/>
+                                <constraint firstAttribute="trailing" secondItem="8UZ-sp-ugG" secondAttribute="trailing" constant="24" id="jJP-HU-dMY"/>
+                                <constraint firstAttribute="height" constant="80" id="qEc-3z-wen"/>
+                            </constraints>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="WdG-XP-uql">
+                            <rect key="frame" x="0.0" y="67" width="393" height="391"/>
+                            <color key="backgroundColor" name="bk-origin"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aCH-o9-3ur">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="eaX-Oe-tFm"/>
+                    <keyboardLayoutGuide key="keyboard" id="BmY-b7-EtP"/>
+                    <color key="backgroundColor" name="bk-origin"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="qrH-Gm-GYl" firstAttribute="leading" secondItem="VbX-oq-T8p" secondAttribute="leading" id="Auc-KD-ugO"/>
+                        <constraint firstItem="eaX-Oe-tFm" firstAttribute="bottom" secondItem="frg-vC-zvx" secondAttribute="bottom" priority="700" id="Fzs-Kf-yvH"/>
+                        <constraint firstAttribute="trailing" secondItem="frg-vC-zvx" secondAttribute="trailing" id="HjP-RE-U3f"/>
+                        <constraint firstItem="BmY-b7-EtP" firstAttribute="top" secondItem="frg-vC-zvx" secondAttribute="bottom" priority="750" id="eRR-az-lEi"/>
+                        <constraint firstItem="frg-vC-zvx" firstAttribute="leading" secondItem="VbX-oq-T8p" secondAttribute="leading" id="l9G-kJ-agr"/>
+                        <constraint firstItem="qrH-Gm-GYl" firstAttribute="top" secondItem="VbX-oq-T8p" secondAttribute="top" id="ocG-RF-eyX"/>
+                        <constraint firstItem="frg-vC-zvx" firstAttribute="top" secondItem="WdG-XP-uql" secondAttribute="bottom" id="ocW-6k-IJN"/>
+                        <constraint firstAttribute="trailing" secondItem="WdG-XP-uql" secondAttribute="trailing" id="ohk-f9-pFr"/>
+                        <constraint firstItem="WdG-XP-uql" firstAttribute="top" secondItem="qrH-Gm-GYl" secondAttribute="bottom" id="uQh-fh-OF5"/>
+                        <constraint firstItem="WdG-XP-uql" firstAttribute="leading" secondItem="VbX-oq-T8p" secondAttribute="leading" id="vOa-dq-3AI"/>
+                        <constraint firstAttribute="trailing" secondItem="qrH-Gm-GYl" secondAttribute="trailing" id="xjp-jL-epf"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="collectionView" destination="WdG-XP-uql" id="4FZ-pz-S1I"/>
+                        <outlet property="textField" destination="8UZ-sp-ugG" id="Rly-pC-gVS"/>
+                        <outletCollection property="gestureRecognizers" destination="Np6-2q-ocS" appends="YES" id="Ryf-KO-hdZ"/>
+                    </connections>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="bk-origin"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VbX-oq-T8p" secondAttribute="trailing" id="ANf-2O-tHw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nFP-9V-SMF" secondAttribute="trailing" id="DWf-1B-7wj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Non-S8-Ggn" secondAttribute="trailing" id="ITh-BN-MbV"/>
+                <constraint firstItem="VbX-oq-T8p" firstAttribute="top" secondItem="Non-S8-Ggn" secondAttribute="bottom" id="KAA-GV-61D"/>
                 <constraint firstAttribute="bottom" secondItem="Non-S8-Ggn" secondAttribute="bottom" id="M4R-kb-YO5"/>
                 <constraint firstItem="nFP-9V-SMF" firstAttribute="top" secondItem="Non-S8-Ggn" secondAttribute="bottom" id="REt-ar-1bG"/>
                 <constraint firstItem="Non-S8-Ggn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SM2-eF-COs"/>
                 <constraint firstItem="Non-S8-Ggn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TRS-c9-fpc"/>
                 <constraint firstAttribute="bottom" secondItem="nFP-9V-SMF" secondAttribute="bottom" id="ebb-dM-4k9"/>
+                <constraint firstAttribute="bottom" secondItem="VbX-oq-T8p" secondAttribute="bottom" id="eru-ZR-vo2"/>
+                <constraint firstItem="VbX-oq-T8p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nqH-am-P2V"/>
                 <constraint firstItem="nFP-9V-SMF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="t5h-vB-Jla"/>
             </constraints>
             <variation key="default">
@@ -510,6 +604,11 @@
         <tapGestureRecognizer id="Gqv-TG-aHy">
             <connections>
                 <action selector="toggleControlPannel:" destination="-1" id="fmf-NN-i4G"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Np6-2q-ocS">
+            <connections>
+                <action selector="dismissKeyBoard:" destination="VbX-oq-T8p" id="rtS-Qa-ER5"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
@@ -534,6 +633,12 @@
         </namedColor>
         <namedColor name="bk-origin">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="chat-bg">
+            <color red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="chat-text">
+            <color red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="d-text-deep">
             <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
