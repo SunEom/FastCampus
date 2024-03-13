@@ -15,8 +15,12 @@ import Foundation
     func requestData() {
         Task {
             do {
-                self.video = try await DataLoader.load(
-                    url: URLDefines.video,
+//                self.video = try await DataLoader.load(
+//                    url: URLDefines.video,
+//                    for: Video.self
+//                )
+                self.video = try DataLoader.load(
+                    json: "video",
                     for: Video.self
                 )
                 self.dataChangeHandler?(video!)

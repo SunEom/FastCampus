@@ -6,6 +6,18 @@
 //
 
 import UIKit
+import AVKit
+
+protocol VideoViewControllerDelegate: AnyObject {
+    func videoViewController(
+        _ videoViewController: VideoViewController,
+        yPositionForMinimizeView height: CGFloat
+    ) -> CGFloat
+    
+    func videoViewControllerDidMinimize(_ videoViewController: VideoViewController)
+    func videoViewControllerNeedsMaximize(_ videoViewController: VideoViewController)
+    func videoViewControllerDidTapClose(_ videoViewController: VideoViewController)
+}
 
 class VideoViewController: UIViewController {
 
@@ -39,6 +51,24 @@ class VideoViewController: UIViewController {
     var isLiveMode: Bool = false
     @IBOutlet weak var chattingBottomConstraints: NSLayoutConstraint!
     
+    private var isMinimizeMode: Bool = false {
+        didSet {
+            self.minimizeView.isHidden = !self.isMinimizeMode
+        }
+    }
+    weak var delegate: VideoViewControllerDelegate?
+    
+    //MARK: - 최소화
+    
+    @IBOutlet weak var minimizeViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var minimizeView: UIView!
+    @IBOutlet weak var minimizePlayerView: PlayerView!
+    @IBOutlet weak var minimizeTitleLabel: UILabel!
+    @IBOutlet weak var minimizeChannelLabel: UILabel!
+    @IBOutlet weak var minimizePlayButton: UIButton!
+    
+    private var pipController: AVPictureInPictureController?
+    
     private var contentSizeObservation: NSKeyValueObservation?
     private let viewModel: VideoViewModel = .init()
     private static let dateFormatter: DateFormatter = {
@@ -61,18 +91,21 @@ class VideoViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.modalPresentationStyle = .fullScreen
+        self.modalPresentationStyle = .custom
+        self.transitioningDelegate = self
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        self.modalPresentationStyle = .fullScreen
+        self.modalPresentationStyle = .custom
+        self.transitioningDelegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.minimizePlayerView.delegate = self
         self.playerView.delegate = self
         self.seekbar.delegate = self
         self.chattingView.delegate = self
@@ -81,8 +114,25 @@ class VideoViewController: UIViewController {
         self.bindViewModel()
         self.viewModel.requestData()
         self.chattingView.isHidden = !self.isLiveMode
+        self.setupPIPController()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if self.isBeingPresented {
+            self.setupPIPController()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isBeingDismissed {
+            self.pipController = nil
+        }
+    }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         self.chattingView.textField.resignFirstResponder()
@@ -100,6 +150,19 @@ class VideoViewController: UIViewController {
         }
     }
     
+    private func setupPIPController() {
+        guard AVPictureInPictureController.isPictureInPictureSupported(),
+              let playerLayer = self.playerView.avPlayerLayer
+        else {
+            return
+        }
+        
+        let pipController = AVPictureInPictureController(playerLayer: playerLayer)
+        pipController?.canStartPictureInPictureAutomaticallyFromInline = true
+        
+        self.pipController = pipController
+    }
+    
     private func isLandscape(size: CGSize) -> Bool {
         size.width > size.height
     }
@@ -114,9 +177,11 @@ class VideoViewController: UIViewController {
         self.playerView.set(url: video.videoURL)
         self.playerView.play()
         self.titleLabel.text = video.title
+        self.minimizeTitleLabel.text = video.title
         self.landscapeTitleLabel.text = video.title
         self.channelThumbnailImageView.loadImage(url: video.channelImageUrl)
         self.channelNameLabel.text = video.channel
+        self.minimizeChannelLabel.text = video.channel
         self.updateDateLabel.text = Self.dateFormatter.string(from: Date(timeIntervalSince1970: video.uploadTimestamp))
         self.playCountLabel.text = "\(video.playCount)"
         self.favoriteButton.setTitle("\(video.favoriteCount)", for: .normal)
@@ -142,11 +207,13 @@ extension VideoViewController {
         self.isControlPannelHidden.toggle()
     }
     @IBAction func closeDidTap(_ sender: Any) {
+        self.isMinimizeMode = true
+        self.rotateScene(landscape: false)
         self.dismiss(animated: true)
     }
     @IBAction func moreDidTap(_ sender: Any) {
         let moreVC = MoreViewController()
-        self.present(moreVC, animated: false)
+        self.present(moreVC, animated: true)
         
     }
     @IBAction func playDidTap(_ sender: Any) {
@@ -179,6 +246,7 @@ extension VideoViewController {
     private func updatePlayButton(isPlaying: Bool) {
         let playImage = isPlaying ? UIImage(named: "small_pause") : UIImage(named: "small_play")
         self.playButton.setImage(playImage, for: .normal)
+        self.minimizePlayButton.setImage(playImage, for: .normal)
         
         let landscapePlayImage = isPlaying ? UIImage(named: "big_pause") : UIImage(named: "big_play")
         self.landScapePlayButton.setImage(landscapePlayImage, for: .normal)
@@ -197,6 +265,16 @@ extension VideoViewController {
     }
     
     
+}
+
+extension VideoViewController {
+    @IBAction func minimizeViewCloseDidTap(_ sender: Any) {
+        self.delegate?.videoViewControllerDidTapClose(self)
+    }
+    
+    @IBAction func maximize(_ sender: Any) {
+        self.delegate?.videoViewControllerNeedsMaximize(self)
+    }
 }
 
 extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
@@ -233,6 +311,99 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+}
+
+extension VideoViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self
+    }
+}
+
+extension VideoViewController: UIViewControllerAnimatedTransitioning {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        0.3
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        if self.isBeingPresented {
+            guard let view = transitionContext.view(forKey: .to) else {
+                return
+            }
+            
+            transitionContext.containerView.addSubview(view)
+            
+            if self.isMinimizeMode {
+                self.chattingBottomConstraints.constant = 0
+                self.playerViewBottomConstraint.isActive = false
+                self.playerView.isHidden = false
+                self.minimizeViewBottomConstraint.isActive = false
+                self.isMinimizeMode = false
+                
+                UIView.animate(
+                    withDuration: self.transitionDuration(using: transitionContext)
+                ) {
+                    view.frame = .init(
+                        origin: .init(x: 0, y: view.safeAreaInsets.top),
+                        size: view.window?.frame.size ?? view.frame.size
+                    )
+                } completion: { _ in
+                    view.frame.origin = .zero
+                    transitionContext.completeTransition(transitionContext.transitionWasCancelled == false)
+                }
+            } else {
+                view.alpha = 0
+                UIView.animate(
+                    withDuration: self.transitionDuration(using: transitionContext)
+                ) {
+                    view.alpha = 1
+                } completion: { _ in
+                    transitionContext.completeTransition(transitionContext.transitionWasCancelled == false)
+                }
+            }
+        } else {
+            guard let view = transitionContext.view(forKey: .from) else {
+                return
+            }
+            
+            if self.isMinimizeMode,
+               let yPosition = self.delegate?.videoViewController(self, yPositionForMinimizeView: self.minimizeView.frame.height) {
+                self.minimizePlayerView.player = self.playerView.player
+                self.isControlPannelHidden = true
+                self.chattingBottomConstraints.constant = self.chattingHiddenBottomConstant
+                self.playerViewBottomConstraint.isActive = true
+                self.playerView.isHidden = true
+                
+                view.frame.origin.y = view.safeAreaInsets.top
+                
+                UIView.animate(
+                    withDuration: self.transitionDuration(using: transitionContext)
+                ) {
+                    view.frame.origin.y = yPosition
+                    view.frame.size.height = self.minimizeView.frame.height
+                } completion: { _ in
+                    transitionContext.completeTransition(transitionContext.transitionWasCancelled == false)
+                    self.minimizeViewBottomConstraint.isActive = true
+                    self.delegate?.videoViewControllerDidMinimize(self)
+                }
+            } else {
+                UIView.animate(
+                    withDuration: self.transitionDuration(using: transitionContext)
+                ) {
+                    view.alpha = 0
+                } completion: { _ in
+                    transitionContext.completeTransition(transitionContext.transitionWasCancelled == false)
+                    view.alpha = 1
+                }
+            }
+            
+        }
+    }
+    
+    
 }
 
 extension VideoViewController: SeekBarViewDelegate {

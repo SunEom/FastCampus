@@ -16,7 +16,8 @@ import Foundation
     func requestData() {
         Task {
             do {
-                self.home = try await DataLoader.load(url: URLDefines.home, for: Home.self)
+//                self.home = try await DataLoader.load(url: URLDefines.home, for: Home.self)
+                self.home = try DataLoader.load(json: "home", for: Home.self)
                 recommendViewModel.recommends = home?.recommends
                 self.dataChanged?()
             } catch {

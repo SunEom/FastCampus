@@ -77,6 +77,7 @@
 		BF7751002B9871A6008AE7F3 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7750FF2B9871A6008AE7F3 /* VideoViewModel.swift */; };
 		BF7751032B994EB8008AE7F3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7751022B994EB8008AE7F3 /* PlayerView.swift */; };
 		BF7751052B9AFE3E008AE7F3 /* SeekbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7751042B9AFE3E008AE7F3 /* SeekbarView.swift */; };
+		BFB0C0BC2BA15774004B4B1F /* VideoViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0C0BB2BA15774004B4B1F /* VideoViewControllerContainer.swift */; };
 		BFFD3DB62B8E4A2A0072EFC8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD3DB52B8E4A2A0072EFC8 /* HomeViewController.swift */; };
 		BFFD3DBA2B8E4B0A0072EFC8 /* HomeVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD3DB82B8E4B0A0072EFC8 /* HomeVideoCell.swift */; };
 		BFFD3DBB2B8E4B0A0072EFC8 /* HomeVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFD3DB92B8E4B0A0072EFC8 /* HomeVideoCell.xib */; };
@@ -180,6 +181,7 @@
 		BF7750FF2B9871A6008AE7F3 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		BF7751022B994EB8008AE7F3 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		BF7751042B9AFE3E008AE7F3 /* SeekbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekbarView.swift; sourceTree = "<group>"; };
+		BFB0C0BB2BA15774004B4B1F /* VideoViewControllerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewControllerContainer.swift; sourceTree = "<group>"; };
 		BFFD3DB52B8E4A2A0072EFC8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BFFD3DB82B8E4B0A0072EFC8 /* HomeVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCell.swift; sourceTree = "<group>"; };
 		BFFD3DB92B8E4B0A0072EFC8 /* HomeVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideoCell.xib; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		BF175C452B8E390D00FE67A5 = {
 			isa = PBXGroup;
 			children = (
+				BFB0C0BB2BA15774004B4B1F /* VideoViewControllerContainer.swift */,
 				BF175C502B8E390D00FE67A5 /* KTV */,
 				BF175C672B8E390E00FE67A5 /* KTVTests */,
 				BF175C712B8E390E00FE67A5 /* KTVUITests */,
@@ -626,6 +629,7 @@
 				BF7750FC2B986CBD008AE7F3 /* MoreViewModel.swift in Sources */,
 				BF7750E22B96CC37008AE7F3 /* FavoriteViewModel.swift in Sources */,
 				BF4510FD2B8F175B00B3330D /* HomeRecentWatchContainerCell.swift in Sources */,
+				BFB0C0BC2BA15774004B4B1F /* VideoViewControllerContainer.swift in Sources */,
 				BF7750F92B986B84008AE7F3 /* MoreTableViewCell.swift in Sources */,
 				BFFD3DC22B8EF00D0072EFC8 /* HomeHeaderView.swift in Sources */,
 				BF4510F92B8F129300B3330D /* HomeRankingItemCell.swift in Sources */,
