@@ -32,6 +32,8 @@
 		BF267F1F2BA815CE009A46F6 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BF267F1E2BA815CE009A46F6 /* GoogleSignInSwift */; };
 		BF267F222BA816C0009A46F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F212BA816BF009A46F6 /* User.swift */; };
 		BF267F242BA81709009A46F6 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F232BA81709009A46F6 /* ServiceError.swift */; };
+		BF267F292BA82236009A46F6 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F272BA82236009A46F6 /* SHA256.swift */; };
+		BF267F2A2BA82236009A46F6 /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F282BA82236009A46F6 /* RandomNonceString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,9 @@
 		BF267F192BA8120A009A46F6 /* LoginButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonStyle.swift; sourceTree = "<group>"; };
 		BF267F212BA816BF009A46F6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF267F232BA81709009A46F6 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		BF267F252BA82079009A46F6 /* LMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LMessenger.entitlements; sourceTree = "<group>"; };
+		BF267F272BA82236009A46F6 /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
+		BF267F282BA82236009A46F6 /* RandomNonceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,12 +136,14 @@
 		BF267EC22BA80412009A46F6 /* LMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				BF267F252BA82079009A46F6 /* LMessenger.entitlements */,
 				BF267F072BA80AF7009A46F6 /* AppDelegate.swift */,
 				BF267EC32BA80412009A46F6 /* LMessengerApp.swift */,
 				BF267F002BA80807009A46F6 /* View */,
 				BF267F202BA816B8009A46F6 /* Model */,
 				BF267EFD2BA80796009A46F6 /* Service */,
 				BF267EFA2BA80767009A46F6 /* General */,
+				BF267F262BA8221A009A46F6 /* Util */,
 				BF267EF12BA804D5009A46F6 /* Resource */,
 				BF267EF52BA805D4009A46F6 /* Info.plist */,
 				BF267F0C2BA80CEB009A46F6 /* GoogleService-Info.plist */,
@@ -250,6 +257,15 @@
 				BF267F212BA816BF009A46F6 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BF267F262BA8221A009A46F6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BF267F282BA82236009A46F6 /* RandomNonceString.swift */,
+				BF267F272BA82236009A46F6 /* SHA256.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,7 +421,9 @@
 				BF267F1A2BA8120A009A46F6 /* LoginButtonStyle.swift in Sources */,
 				BF267EC42BA80412009A46F6 /* LMessengerApp.swift in Sources */,
 				BF267F182BA81165009A46F6 /* LoginView.swift in Sources */,
+				BF267F292BA82236009A46F6 /* SHA256.swift in Sources */,
 				BF267F0F2BA80D6E009A46F6 /* AuthenticationService.swift in Sources */,
+				BF267F2A2BA82236009A46F6 /* RandomNonceString.swift in Sources */,
 				BF267F242BA81709009A46F6 /* ServiceError.swift in Sources */,
 				BF267F162BA80F74009A46F6 /* MainTabView.swift in Sources */,
 			);
@@ -568,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LMessenger/LMessenger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LMessenger/Preview Content\"";
@@ -585,7 +604,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.suneom.LMessenger;
+				PRODUCT_BUNDLE_IDENTIFIER = eraseToAnyPublisher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -598,6 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LMessenger/LMessenger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LMessenger/Preview Content\"";
@@ -615,7 +635,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.suneom.LMessenger;
+				PRODUCT_BUNDLE_IDENTIFIER = eraseToAnyPublisher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
