@@ -44,7 +44,7 @@ struct HomeView: View {
                         .padding(.horizontal, 30)
                     }
                 }
-                    
+                
             }
             .toolbar {
                 Image("bookmark")
@@ -55,6 +55,9 @@ struct HomeView: View {
                 } label: {
                     Image("settings")
                 }
+            }
+            .onAppear {
+                viewModel.send(action: .getUser)
             }
         }
     }
@@ -128,6 +131,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(viewModel: .init())
+    HomeView(viewModel: .init(container: DIContainer(services: StubService()), userId: "userid"))
 }
 
