@@ -44,6 +44,14 @@
 		BF5886E12BA975280059756A /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886E02BA975280059756A /* UserObject.swift */; };
 		BF5886E32BA975BE0059756A /* DBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886E22BA975BE0059756A /* DBError.swift */; };
 		BF5886E52BA979190059756A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886E42BA979190059756A /* Constant.swift */; };
+		BF5886E72BA984EC0059756A /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886E62BA984EC0059756A /* Phase.swift */; };
+		BF5886E92BA985A30059756A /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886E82BA985A30059756A /* PlaceholderView.swift */; };
+		BF5886EC2BA985D20059756A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886EB2BA985D20059756A /* LoadingView.swift */; };
+		BF5886EE2BA9860C0059756A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886ED2BA9860C0059756A /* ErrorView.swift */; };
+		BF5886F02BA986A20059756A /* HomeModalDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886EF2BA986A20059756A /* HomeModalDestination.swift */; };
+		BF5886F32BA9874F0059756A /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886F22BA9874F0059756A /* MyProfileView.swift */; };
+		BF5886F52BA987560059756A /* OtherProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886F42BA987560059756A /* OtherProfileView.swift */; };
+		BF5886F72BA98D000059756A /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886F62BA98D000059756A /* ContactService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +110,14 @@
 		BF5886E02BA975280059756A /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
 		BF5886E22BA975BE0059756A /* DBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBError.swift; sourceTree = "<group>"; };
 		BF5886E42BA979190059756A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BF5886E62BA984EC0059756A /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
+		BF5886E82BA985A30059756A /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		BF5886EB2BA985D20059756A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		BF5886ED2BA9860C0059756A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		BF5886EF2BA986A20059756A /* HomeModalDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModalDestination.swift; sourceTree = "<group>"; };
+		BF5886F22BA9874F0059756A /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		BF5886F42BA987560059756A /* OtherProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileView.swift; sourceTree = "<group>"; };
+		BF5886F62BA98D000059756A /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +239,8 @@
 			children = (
 				BF267EFB2BA80771009A46F6 /* DIContainer.swift */,
 				BF5886E42BA979190059756A /* Constant.swift */,
+				BF5886E62BA984EC0059756A /* Phase.swift */,
+				BF5886EA2BA985C80059756A /* View */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -234,6 +252,7 @@
 				BF267EFE2BA807A4009A46F6 /* Services.swift */,
 				BF267F0E2BA80D6E009A46F6 /* AuthenticationService.swift */,
 				BF267F232BA81709009A46F6 /* ServiceError.swift */,
+				BF5886F62BA98D000059756A /* ContactService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -241,8 +260,11 @@
 		BF267F002BA80807009A46F6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF5886F12BA9873C0059756A /* Profile */,
 				BF267F012BA8080F009A46F6 /* Authentication */,
 				BF267F102BA80F3F009A46F6 /* Login */,
+				BF267F2D2BA96989009A46F6 /* Home */,
+				BF267F302BA9699F009A46F6 /* ChatList */,
 				BF267F112BA80F44009A46F6 /* MainTab */,
 			);
 			path = View;
@@ -270,8 +292,6 @@
 		BF267F112BA80F44009A46F6 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
-				BF267F302BA9699F009A46F6 /* ChatList */,
-				BF267F2D2BA96989009A46F6 /* Home */,
 				BF267F152BA80F74009A46F6 /* MainTabView.swift */,
 				BF267F2B2BA9686F009A46F6 /* MainTabType.swift */,
 			);
@@ -300,6 +320,7 @@
 			children = (
 				BF267F2E2BA9699A009A46F6 /* HomeView.swift */,
 				BF5886D52BA96B600059756A /* HomeViewModel.swift */,
+				BF5886EF2BA986A20059756A /* HomeModalDestination.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -335,6 +356,25 @@
 				BF5886E02BA975280059756A /* UserObject.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		BF5886EA2BA985C80059756A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF5886E82BA985A30059756A /* PlaceholderView.swift */,
+				BF5886EB2BA985D20059756A /* LoadingView.swift */,
+				BF5886ED2BA9860C0059756A /* ErrorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF5886F12BA9873C0059756A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BF5886F22BA9874F0059756A /* MyProfileView.swift */,
+				BF5886F42BA987560059756A /* OtherProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,8 +525,14 @@
 				BF267F2C2BA9686F009A46F6 /* MainTabType.swift in Sources */,
 				BF267F032BA8082D009A46F6 /* AuthenticatedViewModel.swift in Sources */,
 				BF5886E12BA975280059756A /* UserObject.swift in Sources */,
+				BF5886EE2BA9860C0059756A /* ErrorView.swift in Sources */,
+				BF5886EC2BA985D20059756A /* LoadingView.swift in Sources */,
+				BF5886E72BA984EC0059756A /* Phase.swift in Sources */,
+				BF5886F72BA98D000059756A /* ContactService.swift in Sources */,
 				BF5886D62BA96B600059756A /* HomeViewModel.swift in Sources */,
 				BF267EFF2BA807A4009A46F6 /* Services.swift in Sources */,
+				BF5886E92BA985A30059756A /* PlaceholderView.swift in Sources */,
+				BF5886F02BA986A20059756A /* HomeModalDestination.swift in Sources */,
 				BF267F132BA80F57009A46F6 /* LoginIntroView.swift in Sources */,
 				BF5886DE2BA974390059756A /* UserService.swift in Sources */,
 				BF5886DC2BA974140059756A /* UserDBRepository.swift in Sources */,
@@ -504,7 +550,9 @@
 				BF267F0F2BA80D6E009A46F6 /* AuthenticationService.swift in Sources */,
 				BF267F2A2BA82236009A46F6 /* RandomNonceString.swift in Sources */,
 				BF267F242BA81709009A46F6 /* ServiceError.swift in Sources */,
+				BF5886F32BA9874F0059756A /* MyProfileView.swift in Sources */,
 				BF267F162BA80F74009A46F6 /* MainTabView.swift in Sources */,
+				BF5886F52BA987560059756A /* OtherProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +721,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LMessenger/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "친구 목록을 가져옵니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -704,6 +753,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LMessenger/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "친구 목록을 가져옵니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
