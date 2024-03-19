@@ -34,6 +34,10 @@
 		BF267F242BA81709009A46F6 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F232BA81709009A46F6 /* ServiceError.swift */; };
 		BF267F292BA82236009A46F6 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F272BA82236009A46F6 /* SHA256.swift */; };
 		BF267F2A2BA82236009A46F6 /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F282BA82236009A46F6 /* RandomNonceString.swift */; };
+		BF267F2C2BA9686F009A46F6 /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F2B2BA9686F009A46F6 /* MainTabType.swift */; };
+		BF267F2F2BA9699A009A46F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F2E2BA9699A009A46F6 /* HomeView.swift */; };
+		BF267F322BA969AA009A46F6 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267F312BA969AA009A46F6 /* ChatListView.swift */; };
+		BF5886D62BA96B600059756A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886D52BA96B600059756A /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,10 @@
 		BF267F252BA82079009A46F6 /* LMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LMessenger.entitlements; sourceTree = "<group>"; };
 		BF267F272BA82236009A46F6 /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		BF267F282BA82236009A46F6 /* RandomNonceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
+		BF267F2B2BA9686F009A46F6 /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
+		BF267F2E2BA9699A009A46F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BF267F312BA969AA009A46F6 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		BF5886D52BA96B600059756A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,7 +254,10 @@
 		BF267F112BA80F44009A46F6 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
+				BF267F302BA9699F009A46F6 /* ChatList */,
+				BF267F2D2BA96989009A46F6 /* Home */,
 				BF267F152BA80F74009A46F6 /* MainTabView.swift */,
+				BF267F2B2BA9686F009A46F6 /* MainTabType.swift */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -266,6 +277,23 @@
 				BF267F272BA82236009A46F6 /* SHA256.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		BF267F2D2BA96989009A46F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BF267F2E2BA9699A009A46F6 /* HomeView.swift */,
+				BF5886D52BA96B600059756A /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BF267F302BA9699F009A46F6 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				BF267F312BA969AA009A46F6 /* ChatListView.swift */,
+			);
+			path = ChatList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,13 +439,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF267F222BA816C0009A46F6 /* User.swift in Sources */,
+				BF267F2C2BA9686F009A46F6 /* MainTabType.swift in Sources */,
 				BF267F032BA8082D009A46F6 /* AuthenticatedViewModel.swift in Sources */,
+				BF5886D62BA96B600059756A /* HomeViewModel.swift in Sources */,
 				BF267EFF2BA807A4009A46F6 /* Services.swift in Sources */,
 				BF267F132BA80F57009A46F6 /* LoginIntroView.swift in Sources */,
 				BF267EFC2BA80771009A46F6 /* DIContainer.swift in Sources */,
 				BF267EC62BA80412009A46F6 /* AuthenticatedView.swift in Sources */,
 				BF267F082BA80AF7009A46F6 /* AppDelegate.swift in Sources */,
+				BF267F322BA969AA009A46F6 /* ChatListView.swift in Sources */,
 				BF267EF42BA804F1009A46F6 /* Color+Extension.swift in Sources */,
+				BF267F2F2BA9699A009A46F6 /* HomeView.swift in Sources */,
 				BF267F1A2BA8120A009A46F6 /* LoginButtonStyle.swift in Sources */,
 				BF267EC42BA80412009A46F6 /* LMessengerApp.swift in Sources */,
 				BF267F182BA81165009A46F6 /* LoginView.swift in Sources */,
