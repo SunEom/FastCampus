@@ -6,12 +6,21 @@
 //
 
 import Foundation
+import PhotosUI
+import SwiftUI
 
 @MainActor
 class MyProfileViewModel: ObservableObject {
     
     @Published var userInfo: User?
     @Published var isPresentedEditView: Bool = false
+    @Published var imageSelection: PhotosPickerItem? {
+        didSet {
+            Task {
+                await updateProfileImage(pickerItem: imageSelection)
+            }
+        }
+    }
     
     private let userId: String
     
@@ -35,5 +44,21 @@ class MyProfileViewModel: ObservableObject {
         } catch {
             
         }
+    }
+    
+    func updateProfileImage(pickerItem: PhotosPickerItem?) async {
+        guard let pickerItem else {
+            return
+        }
+        
+        do {
+            let data = try await container.services.photoPickerService.loadTransferable(from: pickerItem)
+            // TODO: storage upload
+            // TODO: db update
+        } catch {
+            
+        }
+        
+        
     }
 }

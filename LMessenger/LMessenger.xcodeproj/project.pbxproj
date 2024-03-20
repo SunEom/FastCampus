@@ -55,6 +55,8 @@
 		BF5886F92BAABF280059756A /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886F82BAABF280059756A /* MyProfileViewModel.swift */; };
 		BF5886FB2BAAC2310059756A /* MyProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886FA2BAAC2310059756A /* MyProfileMenuType.swift */; };
 		BF5886FD2BAAC5BB0059756A /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886FC2BAAC5BB0059756A /* MyProfileDescEditView.swift */; };
+		BF5886FF2BAACBC90059756A /* PhotoPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5886FE2BAACBC90059756A /* PhotoPickerService.swift */; };
+		BF5887022BAACCB60059756A /* Photoimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5887012BAACCB60059756A /* Photoimage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		BF5886F82BAABF280059756A /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
 		BF5886FA2BAAC2310059756A /* MyProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileMenuType.swift; sourceTree = "<group>"; };
 		BF5886FC2BAAC5BB0059756A /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
+		BF5886FE2BAACBC90059756A /* PhotoPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerService.swift; sourceTree = "<group>"; };
+		BF5887012BAACCB60059756A /* Photoimage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photoimage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,7 @@
 		BF267EFD2BA80796009A46F6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				BF5887002BAACCA00059756A /* PhotoPicker */,
 				BF5886DD2BA974390059756A /* UserService.swift */,
 				BF267EFE2BA807A4009A46F6 /* Services.swift */,
 				BF267F0E2BA80D6E009A46F6 /* AuthenticationService.swift */,
@@ -384,6 +389,15 @@
 				BF5886FC2BAAC5BB0059756A /* MyProfileDescEditView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		BF5887002BAACCA00059756A /* PhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				BF5886FE2BAACBC90059756A /* PhotoPickerService.swift */,
+				BF5887012BAACCB60059756A /* Photoimage.swift */,
+			);
+			path = PhotoPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,8 +546,10 @@
 				BF5886E32BA975BE0059756A /* DBError.swift in Sources */,
 				BF267F222BA816C0009A46F6 /* User.swift in Sources */,
 				BF267F2C2BA9686F009A46F6 /* MainTabType.swift in Sources */,
+				BF5886FF2BAACBC90059756A /* PhotoPickerService.swift in Sources */,
 				BF267F032BA8082D009A46F6 /* AuthenticatedViewModel.swift in Sources */,
 				BF5886E12BA975280059756A /* UserObject.swift in Sources */,
+				BF5887022BAACCB60059756A /* Photoimage.swift in Sources */,
 				BF5886EE2BA9860C0059756A /* ErrorView.swift in Sources */,
 				BF5886EC2BA985D20059756A /* LoadingView.swift in Sources */,
 				BF5886E72BA984EC0059756A /* Phase.swift in Sources */,
