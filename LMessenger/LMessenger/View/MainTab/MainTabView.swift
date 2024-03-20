@@ -23,6 +23,7 @@ struct MainTabView: View {
                                     userId: authViewModel.userId ?? ""
                                 )
                             )
+                            .environmentObject(container)
                         case .chat:
                             ChatListView()
                         case .phone:
