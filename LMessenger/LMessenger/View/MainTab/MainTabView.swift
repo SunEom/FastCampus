@@ -28,7 +28,7 @@ struct MainTabView: View {
                             )
                             .environmentObject(container)
                         case .chat:
-                            ChatListView()
+                            ChatListView(viewModel: .init(container: container, userId: authViewModel.userId ?? ""))
                         case .phone:
                             Color.blackFix
                     }

@@ -77,6 +77,9 @@
 		BF6E0F0A2BB152E200E7AFF0 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F092BB152E200E7AFF0 /* NavigationRouter.swift */; };
 		BF6E0F0D2BB1547900E7AFF0 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F0C2BB1547900E7AFF0 /* ChatView.swift */; };
 		BF6E0F102BB1548600E7AFF0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F0F2BB1548600E7AFF0 /* SearchView.swift */; };
+		BF6E0F142BB158A800E7AFF0 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F132BB158A800E7AFF0 /* ChatListViewModel.swift */; };
+		BF6E0F162BB159CD00E7AFF0 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F152BB159CD00E7AFF0 /* SearchButton.swift */; };
+		BF6E0F182BB15AD400E7AFF0 /* NavigationRoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F172BB15AD400E7AFF0 /* NavigationRoutingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +169,9 @@
 		BF6E0F092BB152E200E7AFF0 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		BF6E0F0C2BB1547900E7AFF0 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		BF6E0F0F2BB1548600E7AFF0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		BF6E0F132BB158A800E7AFF0 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		BF6E0F152BB159CD00E7AFF0 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		BF6E0F172BB15AD400E7AFF0 /* NavigationRoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoutingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,11 +294,11 @@
 		BF267EFA2BA80767009A46F6 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				BF5886EA2BA985C80059756A /* View */,
 				BF6E0F062BB152BF00E7AFF0 /* Navigation */,
 				BF267EFB2BA80771009A46F6 /* DIContainer.swift */,
 				BF5886E42BA979190059756A /* Constant.swift */,
 				BF5886E62BA984EC0059756A /* Phase.swift */,
-				BF5886EA2BA985C80059756A /* View */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				BF267F312BA969AA009A46F6 /* ChatListView.swift */,
+				BF6E0F132BB158A800E7AFF0 /* ChatListViewModel.swift */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -426,6 +433,7 @@
 				BF5886EB2BA985D20059756A /* LoadingView.swift */,
 				BF5886ED2BA9860C0059756A /* ErrorView.swift */,
 				BF58871C2BAADE780059756A /* URLImage */,
+				BF6E0F152BB159CD00E7AFF0 /* SearchButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -510,6 +518,7 @@
 			children = (
 				BF6E0F072BB152C800E7AFF0 /* NavigationDestination.swift */,
 				BF6E0F092BB152E200E7AFF0 /* NavigationRouter.swift */,
+				BF6E0F172BB15AD400E7AFF0 /* NavigationRoutingView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -716,16 +725,19 @@
 				BF58870B2BAAD0980059756A /* UploadService.swift in Sources */,
 				BF267EC42BA80412009A46F6 /* LMessengerApp.swift in Sources */,
 				BF267F182BA81165009A46F6 /* LoginView.swift in Sources */,
+				BF6E0F182BB15AD400E7AFF0 /* NavigationRoutingView.swift in Sources */,
 				BF267F292BA82236009A46F6 /* SHA256.swift in Sources */,
 				BF6E0F012BB14BF900E7AFF0 /* ChatRoomObject.swift in Sources */,
 				BF267F0F2BA80D6E009A46F6 /* AuthenticationService.swift in Sources */,
 				BF267F2A2BA82236009A46F6 /* RandomNonceString.swift in Sources */,
+				BF6E0F162BB159CD00E7AFF0 /* SearchButton.swift in Sources */,
 				BF58871B2BAADE710059756A /* URLImageView.swift in Sources */,
 				BF267F242BA81709009A46F6 /* ServiceError.swift in Sources */,
 				BF5886F32BA9874F0059756A /* MyProfileView.swift in Sources */,
 				BF267F162BA80F74009A46F6 /* MainTabView.swift in Sources */,
 				BF58871E2BAADE870059756A /* URLImageViewModel.swift in Sources */,
 				BF6E0F082BB152C800E7AFF0 /* NavigationDestination.swift in Sources */,
+				BF6E0F142BB158A800E7AFF0 /* ChatListViewModel.swift in Sources */,
 				BF6E0F032BB14F6000E7AFF0 /* ChatRoomService.swift in Sources */,
 				BF6E0F102BB1548600E7AFF0 /* SearchView.swift in Sources */,
 				BF5886FD2BAAC5BB0059756A /* MyProfileDescEditView.swift in Sources */,
