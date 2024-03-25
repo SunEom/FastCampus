@@ -10,7 +10,9 @@ import SwiftUI
 struct MainTabView: View {
     @EnvironmentObject var authViewModel: AuthenticatedViewModel
     @EnvironmentObject var container: DIContainer
+    @EnvironmentObject var navigationRouter: NavigationRouter
     @State private var selectedTab: MainTabType = .home
+    
     var body: some View {
         TabView(selection: $selectedTab) {
             ForEach(MainTabType.allCases, id: \.self) { tab in
@@ -20,6 +22,7 @@ struct MainTabView: View {
                             HomeView(
                                 viewModel: .init(
                                     container: container,
+                                    navigationRouter: navigationRouter,
                                     userId: authViewModel.userId ?? ""
                                 )
                             )
@@ -44,6 +47,14 @@ struct MainTabView: View {
     }
 }
 
-#Preview {
-    MainTabView()
+struct MainTabView_Previews: PreviewProvider {
+    static let container: DIContainer = DIContainer(services: StubService())
+    static let navigationRouter: NavigationRouter = .init()
+    
+    static var previews: some View {
+        MainTabView()
+            .environmentObject(Self.container)
+            .environmentObject(AuthenticatedViewModel(container: Self.container))
+            .environmentObject(Self.navigationRouter)
+    }
 }
