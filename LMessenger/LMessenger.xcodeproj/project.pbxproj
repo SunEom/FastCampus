@@ -91,6 +91,8 @@
 		BF6E0F2A2BB1A4D500E7AFF0 /* ChatObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F292BB1A4D500E7AFF0 /* ChatObject.swift */; };
 		BF6E0F2C2BB1A67B00E7AFF0 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F2B2BB1A67B00E7AFF0 /* ChatService.swift */; };
 		BF6E0F2E2BB1BCAD00E7AFF0 /* ChatImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F2D2BB1BCAD00E7AFF0 /* ChatImageItemView.swift */; };
+		BF6E0F312BB2870300E7AFF0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BF6E0F302BB2870300E7AFF0 /* FirebaseMessaging */; };
+		BF6E0F332BB288EF00E7AFF0 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F322BB288EF00E7AFF0 /* PushNotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +196,7 @@
 		BF6E0F292BB1A4D500E7AFF0 /* ChatObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatObject.swift; sourceTree = "<group>"; };
 		BF6E0F2B2BB1A67B00E7AFF0 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		BF6E0F2D2BB1BCAD00E7AFF0 /* ChatImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageItemView.swift; sourceTree = "<group>"; };
+		BF6E0F322BB288EF00E7AFF0 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,7 @@
 			files = (
 				BF267F1F2BA815CE009A46F6 /* GoogleSignInSwift in Frameworks */,
 				BF267F0B2BA80C1F009A46F6 /* FirebaseAuth in Frameworks */,
+				BF6E0F312BB2870300E7AFF0 /* FirebaseMessaging in Frameworks */,
 				BF5886D92BA971000059756A /* FirebaseDatabase in Frameworks */,
 				BF5887042BAACFAA0059756A /* FirebaseStorage in Frameworks */,
 				BF5887062BAACFAA0059756A /* FirebaseStorageCombine-Community in Frameworks */,
@@ -339,6 +343,7 @@
 				BF5887112BAAD7950059756A /* ImageCache */,
 				BF6E0F022BB14F6000E7AFF0 /* ChatRoomService.swift */,
 				BF6E0F2B2BB1A67B00E7AFF0 /* ChatService.swift */,
+				BF6E0F322BB288EF00E7AFF0 /* PushNotificationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 				BF5886D82BA971000059756A /* FirebaseDatabase */,
 				BF5887032BAACFAA0059756A /* FirebaseStorage */,
 				BF5887052BAACFAA0059756A /* FirebaseStorageCombine-Community */,
+				BF6E0F302BB2870300E7AFF0 /* FirebaseMessaging */,
 			);
 			productName = LMessenger;
 			productReference = BF267EC02BA80412009A46F6 /* LMessenger.app */;
@@ -765,6 +771,7 @@
 				BF267F2F2BA9699A009A46F6 /* HomeView.swift in Sources */,
 				BF5886F92BAABF280059756A /* MyProfileViewModel.swift in Sources */,
 				BF6E0EFD2BB148FB00E7AFF0 /* OtherProfileMenuType.swift in Sources */,
+				BF6E0F332BB288EF00E7AFF0 /* PushNotificationService.swift in Sources */,
 				BF267F1A2BA8120A009A46F6 /* LoginButtonStyle.swift in Sources */,
 				BF5886E52BA979190059756A /* Constant.swift in Sources */,
 				BF6E0F0D2BB1547900E7AFF0 /* ChatView.swift in Sources */,
@@ -1180,6 +1187,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF267F092BA80C1F009A46F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		BF6E0F302BB2870300E7AFF0 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF267F092BA80C1F009A46F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
