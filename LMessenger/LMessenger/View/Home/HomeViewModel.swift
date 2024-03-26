@@ -16,6 +16,7 @@ class HomeViewModel: ObservableObject {
         case presentMyProfileView
         case presentOthreProfileView(String)
         case goToChat(User)
+        case presentView(HomeModalDestination)
     }
     
     @Published var myUser: User?
@@ -93,6 +94,9 @@ class HomeViewModel: ObservableObject {
                                 )
                         )
                     }.store(in: &subscriptions)
+                
+            case let .presentView(view):
+                self.modalDestination = view
                 
                 
         }
