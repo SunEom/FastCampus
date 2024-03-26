@@ -14,6 +14,7 @@ struct UserObject:Codable {
     var phoneNumber: String?
     var profileURL: String?
     var description: String?
+    var fcmToken: String?
 }
 
 extension UserObject {
@@ -23,7 +24,8 @@ extension UserObject {
             name: name,
             phoneNumber: phoneNumber,
             profileURL: profileURL,
-            description: description
+            description: description,
+            fcmToken: fcmToken
         )
     }
 }

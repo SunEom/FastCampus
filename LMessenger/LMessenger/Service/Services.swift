@@ -39,7 +39,7 @@ class Services: ServiceType {
         self.imageCacheService = ImageCacheService(memoryStorage: MemoryStroage(), diskStorage: DiskStorage())
         self.chatRoomService = ChatRoomService(dbRepository: ChatRoomDBRepository())
         self.chatService = ChatService(dbRepository: ChatDBRepository())
-        self.pushNotificationService = PushNotificationService()
+        self.pushNotificationService = PushNotificationService(provider: PushNotificationProvider())
     }
 }
 

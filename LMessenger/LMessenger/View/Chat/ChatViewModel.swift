@@ -96,6 +96,10 @@ class ChatViewModel: ObservableObject {
                         lastMessage: chat.lastMesssage
                     )
                 }
+                .flatMap { _ -> AnyPublisher<Bool, Never> in
+                    guard let fcmToken = self.otherUser?.fcmToken else { return Empty().eraseToAnyPublisher() }
+                    return self.container.services.pushNotificationService.sendPushNotification(fcmToken: fcmToken, message: message)
+                }
                 .sink { completion in
                     
                 } receiveValue: { [weak self] _ in
@@ -127,6 +131,10 @@ class ChatViewModel: ObservableObject {
                             otherUserId: self.otherUserId,
                             lastMessage: chat.lastMesssage
                         )
+                    }
+                    .flatMap { _ -> AnyPublisher<Bool, Never> in
+                        guard let fcmToken = self.otherUser?.fcmToken else { return Empty().eraseToAnyPublisher() }
+                        return self.container.services.pushNotificationService.sendPushNotification(fcmToken: fcmToken, message: "사진을 보냈습니다.")
                     }
                     .sink { completion in
                         

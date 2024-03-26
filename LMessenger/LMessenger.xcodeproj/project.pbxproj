@@ -93,6 +93,8 @@
 		BF6E0F2E2BB1BCAD00E7AFF0 /* ChatImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F2D2BB1BCAD00E7AFF0 /* ChatImageItemView.swift */; };
 		BF6E0F312BB2870300E7AFF0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BF6E0F302BB2870300E7AFF0 /* FirebaseMessaging */; };
 		BF6E0F332BB288EF00E7AFF0 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F322BB288EF00E7AFF0 /* PushNotificationService.swift */; };
+		BF6E0F352BB290E900E7AFF0 /* PushNotificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F342BB290E900E7AFF0 /* PushNotificationProvider.swift */; };
+		BF6E0F372BB2911600E7AFF0 /* PushObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F362BB2911600E7AFF0 /* PushObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +199,8 @@
 		BF6E0F2B2BB1A67B00E7AFF0 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		BF6E0F2D2BB1BCAD00E7AFF0 /* ChatImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageItemView.swift; sourceTree = "<group>"; };
 		BF6E0F322BB288EF00E7AFF0 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
+		BF6E0F342BB290E900E7AFF0 /* PushNotificationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationProvider.swift; sourceTree = "<group>"; };
+		BF6E0F362BB2911600E7AFF0 /* PushObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +265,7 @@
 				BF267F002BA80807009A46F6 /* View */,
 				BF267F202BA816B8009A46F6 /* Model */,
 				BF267EFD2BA80796009A46F6 /* Service */,
+				BF5886DF2BA975180059756A /* DTO */,
 				BF5886DA2BA974060059756A /* Repository */,
 				BF5887072BAACFD90059756A /* Provider */,
 				BF267EFA2BA80767009A46F6 /* General */,
@@ -440,7 +445,6 @@
 		BF5886DA2BA974060059756A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				BF5886DF2BA975180059756A /* DTO */,
 				BF5886DB2BA974140059756A /* UserDBRepository.swift */,
 				BF5886E22BA975BE0059756A /* DBError.swift */,
 				BF6E0EFE2BB14BBA00E7AFF0 /* ChatRoomDBRepository.swift */,
@@ -455,6 +459,7 @@
 				BF5886E02BA975280059756A /* UserObject.swift */,
 				BF6E0F002BB14BF900E7AFF0 /* ChatRoomObject.swift */,
 				BF6E0F292BB1A4D500E7AFF0 /* ChatObject.swift */,
+				BF6E0F362BB2911600E7AFF0 /* PushObject.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				BF5887082BAACFEF0059756A /* UploadProvider.swift */,
+				BF6E0F342BB290E900E7AFF0 /* PushNotificationProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -774,6 +780,7 @@
 				BF6E0F332BB288EF00E7AFF0 /* PushNotificationService.swift in Sources */,
 				BF267F1A2BA8120A009A46F6 /* LoginButtonStyle.swift in Sources */,
 				BF5886E52BA979190059756A /* Constant.swift in Sources */,
+				BF6E0F372BB2911600E7AFF0 /* PushObject.swift in Sources */,
 				BF6E0F0D2BB1547900E7AFF0 /* ChatView.swift in Sources */,
 				BF58870B2BAAD0980059756A /* UploadService.swift in Sources */,
 				BF267EC42BA80412009A46F6 /* LMessengerApp.swift in Sources */,
@@ -798,6 +805,7 @@
 				BF6E0F2C2BB1A67B00E7AFF0 /* ChatService.swift in Sources */,
 				BF6E0F1C2BB163A400E7AFF0 /* Chat.swift in Sources */,
 				BF6E0F102BB1548600E7AFF0 /* SearchView.swift in Sources */,
+				BF6E0F352BB290E900E7AFF0 /* PushNotificationProvider.swift in Sources */,
 				BF5886FD2BAAC5BB0059756A /* MyProfileDescEditView.swift in Sources */,
 				BF5886FB2BAAC2310059756A /* MyProfileMenuType.swift in Sources */,
 				BF6E0F1A2BB161DB00E7AFF0 /* ChatViewModel.swift in Sources */,
