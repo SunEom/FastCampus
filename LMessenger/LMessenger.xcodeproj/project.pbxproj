@@ -95,6 +95,8 @@
 		BF6E0F332BB288EF00E7AFF0 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F322BB288EF00E7AFF0 /* PushNotificationService.swift */; };
 		BF6E0F352BB290E900E7AFF0 /* PushNotificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F342BB290E900E7AFF0 /* PushNotificationProvider.swift */; };
 		BF6E0F372BB2911600E7AFF0 /* PushObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F362BB2911600E7AFF0 /* PushObject.swift */; };
+		BF6E0F392BB2957200E7AFF0 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F382BB2957200E7AFF0 /* SearchViewModel.swift */; };
+		BF6E0F3B2BB2968600E7AFF0 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F3A2BB2968600E7AFF0 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +203,8 @@
 		BF6E0F322BB288EF00E7AFF0 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
 		BF6E0F342BB290E900E7AFF0 /* PushNotificationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationProvider.swift; sourceTree = "<group>"; };
 		BF6E0F362BB2911600E7AFF0 /* PushObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushObject.swift; sourceTree = "<group>"; };
+		BF6E0F382BB2957200E7AFF0 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		BF6E0F3A2BB2968600E7AFF0 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -575,7 +579,9 @@
 		BF6E0F0E2BB1547E00E7AFF0 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				BF6E0F3A2BB2968600E7AFF0 /* SearchBar.swift */,
 				BF6E0F0F2BB1548600E7AFF0 /* SearchView.swift */,
+				BF6E0F382BB2957200E7AFF0 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -741,6 +747,7 @@
 				BF5886E32BA975BE0059756A /* DBError.swift in Sources */,
 				BF267F222BA816C0009A46F6 /* User.swift in Sources */,
 				BF267F2C2BA9686F009A46F6 /* MainTabType.swift in Sources */,
+				BF6E0F392BB2957200E7AFF0 /* SearchViewModel.swift in Sources */,
 				BF5886FF2BAACBC90059756A /* PhotoPickerService.swift in Sources */,
 				BF267F032BA8082D009A46F6 /* AuthenticatedViewModel.swift in Sources */,
 				BF58870E2BAAD0FD0059756A /* UploadSourceType.swift in Sources */,
@@ -768,6 +775,7 @@
 				BF5886DE2BA974390059756A /* UserService.swift in Sources */,
 				BF5886DC2BA974140059756A /* UserDBRepository.swift in Sources */,
 				BF6E0F262BB16C8700E7AFF0 /* KeyboardToolbar.swift in Sources */,
+				BF6E0F3B2BB2968600E7AFF0 /* SearchBar.swift in Sources */,
 				BF6E0F0A2BB152E200E7AFF0 /* NavigationRouter.swift in Sources */,
 				BF267EFC2BA80771009A46F6 /* DIContainer.swift in Sources */,
 				BF267EC62BA80412009A46F6 /* AuthenticatedView.swift in Sources */,
