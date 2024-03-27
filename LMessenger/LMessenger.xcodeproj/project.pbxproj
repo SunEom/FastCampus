@@ -10,9 +10,6 @@
 		BF267EC42BA80412009A46F6 /* LMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267EC32BA80412009A46F6 /* LMessengerApp.swift */; };
 		BF267EC62BA80412009A46F6 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267EC52BA80412009A46F6 /* AuthenticatedView.swift */; };
 		BF267ECB2BA80413009A46F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF267ECA2BA80413009A46F6 /* Preview Assets.xcassets */; };
-		BF267ED52BA80413009A46F6 /* LMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267ED42BA80413009A46F6 /* LMessengerTests.swift */; };
-		BF267EDF2BA80413009A46F6 /* LMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267EDE2BA80413009A46F6 /* LMessengerUITests.swift */; };
-		BF267EE12BA80413009A46F6 /* LMessengerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267EE02BA80413009A46F6 /* LMessengerUITestsLaunchTests.swift */; };
 		BF267EEF2BA8045B009A46F6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF267EED2BA8045B009A46F6 /* Colors.xcassets */; };
 		BF267EF02BA8045B009A46F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF267EEE2BA8045B009A46F6 /* Assets.xcassets */; };
 		BF267EF42BA804F1009A46F6 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267EF32BA804F1009A46F6 /* Color+Extension.swift */; };
@@ -105,17 +102,19 @@
 		BF6E0F4B2BB3116200E7AFF0 /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F4A2BB3116200E7AFF0 /* SettingItem.swift */; };
 		BF6E0F4E2BB3136B00E7AFF0 /* AppearanceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F4D2BB3136B00E7AFF0 /* AppearanceType.swift */; };
 		BF6E0F502BB3162E00E7AFF0 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E0F4F2BB3162E00E7AFF0 /* AppearanceController.swift */; };
+		BFCC71202BB4457F00CFCEA9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC711F2BB4457F00CFCEA9 /* FirebaseAuth */; };
+		BFCC71222BB4457F00CFCEA9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC71212BB4457F00CFCEA9 /* FirebaseDatabase */; };
+		BFCC71242BB4457F00CFCEA9 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC71232BB4457F00CFCEA9 /* FirebaseMessaging */; };
+		BFCC71262BB4457F00CFCEA9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC71252BB4457F00CFCEA9 /* FirebaseStorage */; };
+		BFCC71282BB4457F00CFCEA9 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC71272BB4457F00CFCEA9 /* FirebaseStorageCombine-Community */; };
+		BFCC712A2BB4458C00CFCEA9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC71292BB4458C00CFCEA9 /* GoogleSignIn */; };
+		BFCC71312BB4551D00CFCEA9 /* ObservableObjectSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC71302BB4551D00CFCEA9 /* ObservableObjectSettable.swift */; };
+		BFCC71342BB455C600CFCEA9 /* DBReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC71332BB455C600CFCEA9 /* DBReference.swift */; };
+		BFCC71362BB45CC000CFCEA9 /* UserDBRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC71352BB45CC000CFCEA9 /* UserDBRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		BF267ED12BA80413009A46F6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF267EB82BA80412009A46F6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF267EBF2BA80412009A46F6;
-			remoteInfo = LMessenger;
-		};
-		BF267EDB2BA80413009A46F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BF267EB82BA80412009A46F6 /* Project object */;
 			proxyType = 1;
@@ -130,10 +129,6 @@
 		BF267EC52BA80412009A46F6 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
 		BF267ECA2BA80413009A46F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF267ED02BA80413009A46F6 /* LMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF267ED42BA80413009A46F6 /* LMessengerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerTests.swift; sourceTree = "<group>"; };
-		BF267EDA2BA80413009A46F6 /* LMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF267EDE2BA80413009A46F6 /* LMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerUITests.swift; sourceTree = "<group>"; };
-		BF267EE02BA80413009A46F6 /* LMessengerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF267EED2BA8045B009A46F6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BF267EEE2BA8045B009A46F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF267EF32BA804F1009A46F6 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -221,6 +216,9 @@
 		BF6E0F4A2BB3116200E7AFF0 /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
 		BF6E0F4D2BB3136B00E7AFF0 /* AppearanceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceType.swift; sourceTree = "<group>"; };
 		BF6E0F4F2BB3162E00E7AFF0 /* AppearanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		BFCC71302BB4551D00CFCEA9 /* ObservableObjectSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectSettable.swift; sourceTree = "<group>"; };
+		BFCC71332BB455C600CFCEA9 /* DBReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBReference.swift; sourceTree = "<group>"; };
+		BFCC71352BB45CC000CFCEA9 /* UserDBRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,13 +240,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF267ED72BA80413009A46F6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				BFCC71242BB4457F00CFCEA9 /* FirebaseMessaging in Frameworks */,
+				BFCC71262BB4457F00CFCEA9 /* FirebaseStorage in Frameworks */,
+				BFCC71282BB4457F00CFCEA9 /* FirebaseStorageCombine-Community in Frameworks */,
+				BFCC71222BB4457F00CFCEA9 /* FirebaseDatabase in Frameworks */,
+				BFCC71202BB4457F00CFCEA9 /* FirebaseAuth in Frameworks */,
+				BFCC712A2BB4458C00CFCEA9 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +257,6 @@
 			children = (
 				BF267EC22BA80412009A46F6 /* LMessenger */,
 				BF267ED32BA80413009A46F6 /* LMessengerTests */,
-				BF267EDD2BA80413009A46F6 /* LMessengerUITests */,
 				BF267EC12BA80412009A46F6 /* Products */,
 				BF5886D72BA971000059756A /* Frameworks */,
 			);
@@ -271,7 +267,6 @@
 			children = (
 				BF267EC02BA80412009A46F6 /* LMessenger.app */,
 				BF267ED02BA80413009A46F6 /* LMessengerTests.xctest */,
-				BF267EDA2BA80413009A46F6 /* LMessengerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -284,6 +279,7 @@
 				BF267EC32BA80412009A46F6 /* LMessengerApp.swift */,
 				BF267F002BA80807009A46F6 /* View */,
 				BF267F202BA816B8009A46F6 /* Model */,
+				BFCC712B2BB4535700CFCEA9 /* Dependency */,
 				BF267EFD2BA80796009A46F6 /* Service */,
 				BF5886DF2BA975180059756A /* DTO */,
 				BF5886DA2BA974060059756A /* Repository */,
@@ -310,18 +306,9 @@
 		BF267ED32BA80413009A46F6 /* LMessengerTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF267ED42BA80413009A46F6 /* LMessengerTests.swift */,
+				BFCC71372BB45CC700CFCEA9 /* Repository */,
 			);
 			path = LMessengerTests;
-			sourceTree = "<group>";
-		};
-		BF267EDD2BA80413009A46F6 /* LMessengerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BF267EDE2BA80413009A46F6 /* LMessengerUITests.swift */,
-				BF267EE02BA80413009A46F6 /* LMessengerUITestsLaunchTests.swift */,
-			);
-			path = LMessengerUITests;
 			sourceTree = "<group>";
 		};
 		BF267EF12BA804D5009A46F6 /* Resource */ = {
@@ -347,13 +334,10 @@
 		BF267EFA2BA80767009A46F6 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				BF6E0F4C2BB3136000E7AFF0 /* Appearance */,
 				BF5886EA2BA985C80059756A /* View */,
-				BF6E0F062BB152BF00E7AFF0 /* Navigation */,
 				BF267EFB2BA80771009A46F6 /* DIContainer.swift */,
 				BF5886E42BA979190059756A /* Constant.swift */,
 				BF5886E62BA984EC0059756A /* Phase.swift */,
-				BF6E0F3F2BB3070200E7AFF0 /* SearchDataController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -473,6 +457,7 @@
 				BF5886E22BA975BE0059756A /* DBError.swift */,
 				BF6E0EFE2BB14BBA00E7AFF0 /* ChatRoomDBRepository.swift */,
 				BF6E0F272BB1A4A900E7AFF0 /* ChatDBRepository.swift */,
+				BFCC71332BB455C600CFCEA9 /* DBReference.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -583,7 +568,8 @@
 				BF6E0F092BB152E200E7AFF0 /* NavigationRouter.swift */,
 				BF6E0F172BB15AD400E7AFF0 /* NavigationRoutingView.swift */,
 			);
-			path = Navigation;
+			name = Navigation;
+			path = ../General/Navigation;
 			sourceTree = "<group>";
 		};
 		BF6E0F0B2BB1546E00E7AFF0 /* Chat */ = {
@@ -637,6 +623,41 @@
 			path = Appearance;
 			sourceTree = "<group>";
 		};
+		BFCC712B2BB4535700CFCEA9 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				BFCC712F2BB4550E00CFCEA9 /* Protocol */,
+				BF6E0F062BB152BF00E7AFF0 /* Navigation */,
+				BF6E0F4C2BB3136000E7AFF0 /* Appearance */,
+				BFCC712D2BB4536A00CFCEA9 /* Search */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		BFCC712D2BB4536A00CFCEA9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BF6E0F3F2BB3070200E7AFF0 /* SearchDataController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BFCC712F2BB4550E00CFCEA9 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BFCC71302BB4551D00CFCEA9 /* ObservableObjectSettable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BFCC71372BB45CC700CFCEA9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				BFCC71352BB45CC000CFCEA9 /* UserDBRepositoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -680,27 +701,17 @@
 				BF267ED22BA80413009A46F6 /* PBXTargetDependency */,
 			);
 			name = LMessengerTests;
+			packageProductDependencies = (
+				BFCC711F2BB4457F00CFCEA9 /* FirebaseAuth */,
+				BFCC71212BB4457F00CFCEA9 /* FirebaseDatabase */,
+				BFCC71232BB4457F00CFCEA9 /* FirebaseMessaging */,
+				BFCC71252BB4457F00CFCEA9 /* FirebaseStorage */,
+				BFCC71272BB4457F00CFCEA9 /* FirebaseStorageCombine-Community */,
+				BFCC71292BB4458C00CFCEA9 /* GoogleSignIn */,
+			);
 			productName = LMessengerTests;
 			productReference = BF267ED02BA80413009A46F6 /* LMessengerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		BF267ED92BA80413009A46F6 /* LMessengerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF267EEA2BA80413009A46F6 /* Build configuration list for PBXNativeTarget "LMessengerUITests" */;
-			buildPhases = (
-				BF267ED62BA80413009A46F6 /* Sources */,
-				BF267ED72BA80413009A46F6 /* Frameworks */,
-				BF267ED82BA80413009A46F6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF267EDC2BA80413009A46F6 /* PBXTargetDependency */,
-			);
-			name = LMessengerUITests;
-			productName = LMessengerUITests;
-			productReference = BF267EDA2BA80413009A46F6 /* LMessengerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -716,10 +727,6 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					BF267ECF2BA80413009A46F6 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = BF267EBF2BA80412009A46F6;
-					};
-					BF267ED92BA80413009A46F6 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = BF267EBF2BA80412009A46F6;
 					};
@@ -744,7 +751,6 @@
 			targets = (
 				BF267EBF2BA80412009A46F6 /* LMessenger */,
 				BF267ECF2BA80413009A46F6 /* LMessengerTests */,
-				BF267ED92BA80413009A46F6 /* LMessengerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -769,13 +775,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF267ED82BA80413009A46F6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -791,6 +790,7 @@
 				BF5886FF2BAACBC90059756A /* PhotoPickerService.swift in Sources */,
 				BF267F032BA8082D009A46F6 /* AuthenticatedViewModel.swift in Sources */,
 				BF58870E2BAAD0FD0059756A /* UploadSourceType.swift in Sources */,
+				BFCC71342BB455C600CFCEA9 /* DBReference.swift in Sources */,
 				BF5886E12BA975280059756A /* UserObject.swift in Sources */,
 				BF5887022BAACCB60059756A /* Photoimage.swift in Sources */,
 				BF5886EE2BA9860C0059756A /* ErrorView.swift in Sources */,
@@ -856,6 +856,7 @@
 				BF6E0F082BB152C800E7AFF0 /* NavigationDestination.swift in Sources */,
 				BF6E0F142BB158A800E7AFF0 /* ChatListViewModel.swift in Sources */,
 				BF6E0F032BB14F6000E7AFF0 /* ChatRoomService.swift in Sources */,
+				BFCC71312BB4551D00CFCEA9 /* ObservableObjectSettable.swift in Sources */,
 				BF6E0F2C2BB1A67B00E7AFF0 /* ChatService.swift in Sources */,
 				BF6E0F1C2BB163A400E7AFF0 /* Chat.swift in Sources */,
 				BF6E0F102BB1548600E7AFF0 /* SearchView.swift in Sources */,
@@ -873,16 +874,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF267ED52BA80413009A46F6 /* LMessengerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF267ED62BA80413009A46F6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF267EDF2BA80413009A46F6 /* LMessengerUITests.swift in Sources */,
-				BF267EE12BA80413009A46F6 /* LMessengerUITestsLaunchTests.swift in Sources */,
+				BFCC71362BB45CC000CFCEA9 /* UserDBRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,11 +885,6 @@
 			isa = PBXTargetDependency;
 			target = BF267EBF2BA80412009A46F6 /* LMessenger */;
 			targetProxy = BF267ED12BA80413009A46F6 /* PBXContainerItemProxy */;
-		};
-		BF267EDC2BA80413009A46F6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF267EBF2BA80412009A46F6 /* LMessenger */;
-			targetProxy = BF267EDB2BA80413009A46F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1094,7 +1081,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KB3R84Q4BQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.suneom.LMessengerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1114,7 +1101,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KB3R84Q4BQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.suneom.LMessengerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1122,42 +1109,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LMessenger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LMessenger";
-			};
-			name = Release;
-		};
-		BF267EEB2BA80413009A46F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KB3R84Q4BQ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.suneom.LMessengerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LMessenger;
-			};
-			name = Debug;
-		};
-		BF267EEC2BA80413009A46F6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KB3R84Q4BQ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.suneom.LMessengerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LMessenger;
 			};
 			name = Release;
 		};
@@ -1187,15 +1138,6 @@
 			buildConfigurations = (
 				BF267EE82BA80413009A46F6 /* Debug */,
 				BF267EE92BA80413009A46F6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF267EEA2BA80413009A46F6 /* Build configuration list for PBXNativeTarget "LMessengerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF267EEB2BA80413009A46F6 /* Debug */,
-				BF267EEC2BA80413009A46F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1256,6 +1198,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF267F092BA80C1F009A46F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		BFCC711F2BB4457F00CFCEA9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF267F092BA80C1F009A46F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BFCC71212BB4457F00CFCEA9 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF267F092BA80C1F009A46F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		BFCC71232BB4457F00CFCEA9 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF267F092BA80C1F009A46F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		BFCC71252BB4457F00CFCEA9 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF267F092BA80C1F009A46F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		BFCC71272BB4457F00CFCEA9 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF267F092BA80C1F009A46F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+		BFCC71292BB4458C00CFCEA9 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF267F1B2BA815CE009A46F6 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 

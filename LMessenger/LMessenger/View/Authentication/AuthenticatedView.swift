@@ -9,10 +9,8 @@ import SwiftUI
 import CoreData
 
 struct AuthenticatedView: View {
+    @EnvironmentObject var container: DIContainer
     @StateObject var authViewModel: AuthenticatedViewModel
-    @StateObject var navigationRouter: NavigationRouter
-    @StateObject var searchDataController: SearchDataController
-    @StateObject var appearanceController: AppearanceController
     
     var body: some View {
         VStack {
@@ -22,10 +20,8 @@ struct AuthenticatedView: View {
                         .environmentObject(authViewModel)
                 case .authenticated:
                     MainTabView()
-                        .environment(\.managedObjectContext, searchDataController.persistantContainer.viewContext )
+                        .environment(\.managedObjectContext, container.searchDataController.persistantContainer.viewContext )
                         .environmentObject(authViewModel)
-                        .environmentObject(navigationRouter)
-                        .environmentObject(appearanceController)
                         .onAppear {
                             authViewModel.send(action: .requestPushNotification)
                         }
@@ -34,16 +30,11 @@ struct AuthenticatedView: View {
         .onAppear {
             authViewModel.send(action: .checkAuthenticationState)
         }
-        .preferredColorScheme(appearanceController.appearance.colorSchme)
+        .preferredColorScheme(container.appearanceController.appearance.colorSchme)
     }
 }
 
 #Preview {
-    AuthenticatedView(
-        authViewModel: .init(container: .init(services: StubService())), 
-        navigationRouter: .init(),
-        searchDataController: .init(),
-        appearanceController: .init(0)
-    )
+    AuthenticatedView(authViewModel: .init(container: .init(services: StubService())))
 }
 

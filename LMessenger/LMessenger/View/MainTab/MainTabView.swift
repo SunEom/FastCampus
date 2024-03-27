@@ -10,7 +10,6 @@ import SwiftUI
 struct MainTabView: View {
     @EnvironmentObject var authViewModel: AuthenticatedViewModel
     @EnvironmentObject var container: DIContainer
-    @EnvironmentObject var navigationRouter: NavigationRouter
     @State private var selectedTab: MainTabType = .home
     
     var body: some View {
@@ -22,7 +21,6 @@ struct MainTabView: View {
                             HomeView(
                                 viewModel: .init(
                                     container: container,
-                                    navigationRouter: navigationRouter,
                                     userId: authViewModel.userId ?? ""
                                 )
                             )
@@ -55,6 +53,5 @@ struct MainTabView_Previews: PreviewProvider {
         MainTabView()
             .environmentObject(Self.container)
             .environmentObject(AuthenticatedViewModel(container: Self.container))
-            .environmentObject(Self.navigationRouter)
     }
 }
