@@ -28,3 +28,9 @@ class DIContainer: ObservableObject {
         self.appearanceController.setObjectWillChange(self.objectWillChange)
     }
 }
+
+extension DIContainer {
+    static var stub: DIContainer {
+        .init(services: StubService())
+    }
+}

@@ -107,10 +107,11 @@
 		BFCC71242BB4457F00CFCEA9 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC71232BB4457F00CFCEA9 /* FirebaseMessaging */; };
 		BFCC71262BB4457F00CFCEA9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC71252BB4457F00CFCEA9 /* FirebaseStorage */; };
 		BFCC71282BB4457F00CFCEA9 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC71272BB4457F00CFCEA9 /* FirebaseStorageCombine-Community */; };
-		BFCC712A2BB4458C00CFCEA9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC71292BB4458C00CFCEA9 /* GoogleSignIn */; };
 		BFCC71312BB4551D00CFCEA9 /* ObservableObjectSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC71302BB4551D00CFCEA9 /* ObservableObjectSettable.swift */; };
 		BFCC71342BB455C600CFCEA9 /* DBReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC71332BB455C600CFCEA9 /* DBReference.swift */; };
 		BFCC71362BB45CC000CFCEA9 /* UserDBRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC71352BB45CC000CFCEA9 /* UserDBRepositoryTests.swift */; };
+		BFFD45392BB59E7A001F1F93 /* ChatRoomServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD45382BB59E7A001F1F93 /* ChatRoomServiceTests.swift */; };
+		BFFD453C2BB5A0BB001F1F93 /* ChatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD453B2BB5A0BB001F1F93 /* ChatViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,8 @@
 		BFCC71302BB4551D00CFCEA9 /* ObservableObjectSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectSettable.swift; sourceTree = "<group>"; };
 		BFCC71332BB455C600CFCEA9 /* DBReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBReference.swift; sourceTree = "<group>"; };
 		BFCC71352BB45CC000CFCEA9 /* UserDBRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBRepositoryTests.swift; sourceTree = "<group>"; };
+		BFFD45382BB59E7A001F1F93 /* ChatRoomServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomServiceTests.swift; sourceTree = "<group>"; };
+		BFFD453B2BB5A0BB001F1F93 /* ChatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +248,6 @@
 				BFCC71282BB4457F00CFCEA9 /* FirebaseStorageCombine-Community in Frameworks */,
 				BFCC71222BB4457F00CFCEA9 /* FirebaseDatabase in Frameworks */,
 				BFCC71202BB4457F00CFCEA9 /* FirebaseAuth in Frameworks */,
-				BFCC712A2BB4458C00CFCEA9 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +308,8 @@
 		BF267ED32BA80413009A46F6 /* LMessengerTests */ = {
 			isa = PBXGroup;
 			children = (
+				BFFD453A2BB5A0AF001F1F93 /* ViewModel */,
+				BFFD45372BB59E69001F1F93 /* Service */,
 				BFCC71372BB45CC700CFCEA9 /* Repository */,
 			);
 			path = LMessengerTests;
@@ -658,6 +662,22 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		BFFD45372BB59E69001F1F93 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BFFD45382BB59E7A001F1F93 /* ChatRoomServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BFFD453A2BB5A0AF001F1F93 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFFD453B2BB5A0BB001F1F93 /* ChatViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -707,7 +727,6 @@
 				BFCC71232BB4457F00CFCEA9 /* FirebaseMessaging */,
 				BFCC71252BB4457F00CFCEA9 /* FirebaseStorage */,
 				BFCC71272BB4457F00CFCEA9 /* FirebaseStorageCombine-Community */,
-				BFCC71292BB4458C00CFCEA9 /* GoogleSignIn */,
 			);
 			productName = LMessengerTests;
 			productReference = BF267ED02BA80413009A46F6 /* LMessengerTests.xctest */;
@@ -874,6 +893,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFD45392BB59E7A001F1F93 /* ChatRoomServiceTests.swift in Sources */,
+				BFFD453C2BB5A0BB001F1F93 /* ChatViewModelTests.swift in Sources */,
 				BFCC71362BB45CC000CFCEA9 /* UserDBRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -946,6 +967,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1002,6 +1024,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -1223,11 +1246,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF267F092BA80C1F009A46F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
-		};
-		BFCC71292BB4458C00CFCEA9 /* GoogleSignIn */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BF267F1B2BA815CE009A46F6 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -15,9 +15,9 @@ protocol ChatRoomServiceType {
 }
 
 class ChatRoomService: ChatRoomServiceType {
-    private let dbRepository: ChatRoomDBRepository
+    private let dbRepository: ChatRoomDBRepositoryType
     
-    init(dbRepository: ChatRoomDBRepository) {
+    init(dbRepository: ChatRoomDBRepositoryType) {
         self.dbRepository = dbRepository
     }
     
