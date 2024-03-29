@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFEAF3BE2BB6940600E44409 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEAF3BD2BB6940600E44409 /* Splash.storyboard */; };
+		BFEAF3C02BB6944F00E44409 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEAF3BF2BB6944F00E44409 /* SplashViewController.swift */; };
+		BFEAF3C32BB69A2E00E44409 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BFEAF3C22BB69A2E00E44409 /* Lottie */; };
 		BFFD454A2BB69112001F1F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD45492BB69112001F1F93 /* AppDelegate.swift */; };
 		BFFD454C2BB69112001F1F93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD454B2BB69112001F1F93 /* SceneDelegate.swift */; };
 		BFFD454E2BB69112001F1F93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD454D2BB69112001F1F93 /* ViewController.swift */; };
@@ -16,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BFEAF3BD2BB6940600E44409 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		BFEAF3BF2BB6944F00E44409 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		BFFD45462BB69112001F1F93 /* Cproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFD45492BB69112001F1F93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFFD454B2BB69112001F1F93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFEAF3C32BB69A2E00E44409 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,8 @@
 				BFFD45492BB69112001F1F93 /* AppDelegate.swift */,
 				BFFD454B2BB69112001F1F93 /* SceneDelegate.swift */,
 				BFFD454D2BB69112001F1F93 /* ViewController.swift */,
+				BFEAF3BD2BB6940600E44409 /* Splash.storyboard */,
+				BFEAF3BF2BB6944F00E44409 /* SplashViewController.swift */,
 				BFFD454F2BB69112001F1F93 /* Main.storyboard */,
 				BFFD45522BB69114001F1F93 /* Assets.xcassets */,
 				BFFD45542BB69114001F1F93 /* LaunchScreen.storyboard */,
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = Cproject;
+			packageProductDependencies = (
+				BFEAF3C22BB69A2E00E44409 /* Lottie */,
+			);
 			productName = Cproject;
 			productReference = BFFD45462BB69112001F1F93 /* Cproject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = BFFD453D2BB69112001F1F93;
+			packageReferences = (
+				BFEAF3C12BB69A2E00E44409 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = BFFD45472BB69112001F1F93 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,6 +142,7 @@
 				BFFD45532BB69114001F1F93 /* Assets.xcassets in Resources */,
 				BFFD45562BB69114001F1F93 /* Base in Resources */,
 				BFFD45512BB69112001F1F93 /* Base in Resources */,
+				BFEAF3BE2BB6940600E44409 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +156,7 @@
 				BFFD454E2BB69112001F1F93 /* ViewController.swift in Sources */,
 				BFFD454A2BB69112001F1F93 /* AppDelegate.swift in Sources */,
 				BFFD454C2BB69112001F1F93 /* SceneDelegate.swift in Sources */,
+				BFEAF3C02BB6944F00E44409 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,9 +313,10 @@
 				INFOPLIST_FILE = Cproject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,9 +342,10 @@
 				INFOPLIST_FILE = Cproject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +381,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BFEAF3C12BB69A2E00E44409 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BFEAF3C22BB69A2E00E44409 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFEAF3C12BB69A2E00E44409 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFFD453E2BB69112001F1F93 /* Project object */;
 }
