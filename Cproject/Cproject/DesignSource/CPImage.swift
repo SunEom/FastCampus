@@ -36,5 +36,8 @@ enum CPImage {
     static var category7Small: UIImage = UIImage(resource: .category7Small)
     static var category8Big: UIImage = UIImage(resource: .category8Big)
     static var category8Small: UIImage = UIImage(resource: .category8Small)
+    
+    static var btnActivate: UIImage = UIImage(resource: .btnActivate)
+    static var btnComplete: UIImage = UIImage(resource: .btnComplete)
 
 }
