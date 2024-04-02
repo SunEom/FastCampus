@@ -15,9 +15,11 @@ final class HomeViewModel {
     enum Action {
         case loadData
         case loadCoupon
+        case loadCategory
         case getDataSuccess(HomeResponse)
         case getDataFail(Error)
         case getCouponSucces(Bool)
+        case getCategorySuccess([Category])
         case didTapCouponButton
     }
     
@@ -25,6 +27,8 @@ final class HomeViewModel {
         struct CollectionViewModels {
             var bannerViewModels: [ HomeBannerCollectionViewCellViewModel]?
             var horizontalProductViewModels: [HomeProductCollectionViewCellViewModel]?
+            var thinSeparateLineViewModels: [HomeThinSeparateLineCollectionViewCellViewModel] = [.init()]
+            var categoryViewModels: [HomeCategoryCellViewModel] = []
             var separateLine1ViewModel: [HomeSeparateLineCollectionViewCellViewModel] = [HomeSeparateLineCollectionViewCellViewModel()]
             var verticalProductViewModels: [HomeProductCollectionViewCellViewModel]?
             var couponViewModels: [HomeCouponButtonCollectionViewCellViewModel]?
@@ -48,6 +52,9 @@ final class HomeViewModel {
             case .loadCoupon:
                 self.loadCoupon()
                 
+            case .loadCategory:
+                self.loadCategory()
+                
             case let .getDataSuccess(response):
                 transformResponse(response)
                 
@@ -56,6 +63,9 @@ final class HomeViewModel {
                 
             case let .getCouponSucces(isDownloaded):
                 Task { await transformCoupon(isDownloaded) }
+                
+            case let .getCategorySuccess(categories):
+                Task { await transformCategory(categories) }
                 
             case .didTapCouponButton:
                 downloadCoupon()
@@ -86,6 +96,10 @@ extension HomeViewModel {
         process(action: .getCouponSucces(couponState))
     }
     
+    private func loadCategory() {
+        process(action: .getCategorySuccess(Category.allCases))
+    }
+    
     private func transformResponse(_ response: HomeResponse) {
         Task { await transformBanner(response) }
         Task { await transformHorizontalProduct(response) }
@@ -101,6 +115,11 @@ extension HomeViewModel {
     @MainActor
     private func transformHorizontalProduct(_ response: HomeResponse) async {
         self.state.collectionViewModels.horizontalProductViewModels = productToHomeProductCollectionViewCellViewModel(response.horizontalProducts)
+    }
+    
+    @MainActor
+    private func transformCategory(_ categories: [Category]) async {
+        self.state.collectionViewModels.categoryViewModels = categories.map { HomeCategoryCellViewModel(category: $0) }
     }
     
     @MainActor
