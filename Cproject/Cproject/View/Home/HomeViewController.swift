@@ -42,6 +42,7 @@ final class HomeViewController: UIViewController {
         
         bindingViewModel()
         collectionView.collectionViewLayout = compositionalLayout
+        collectionView.delegate = self
         
         viewModel.process(action: .loadData)
         viewModel.process(action: .loadCoupon)
@@ -261,6 +262,35 @@ final class HomeViewController: UIViewController {
         let favoriteStoryBoard: UIStoryboard = UIStoryboard(name: "Favorite", bundle: nil)
         if let favoriteVIewController: UIViewController = favoriteStoryBoard.instantiateInitialViewController() {
             navigationController?.pushViewController(favoriteVIewController, animated: true)
+        }
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch currentSection[indexPath.section] {
+            case .banner:
+                break
+            
+            case .thinSeparateLine:
+                break
+                
+            case .category:
+                break
+                
+            case .separateLine1, .separateLine2:
+                break
+                
+            case .couponButton:
+                break
+                
+            case .horizontalProductItem, .vertialProductItem:
+                guard let viewController: UIViewController = UIStoryboard(name: "Detail", bundle: nil).instantiateInitialViewController() else { return }
+                
+                navigationController?.pushViewController(viewController, animated: true)
+            case .theme:
+                break
+            
         }
     }
 }
