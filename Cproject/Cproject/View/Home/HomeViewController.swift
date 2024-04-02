@@ -257,6 +257,12 @@ final class HomeViewController: UIViewController {
         return cell
     }
     
+    @IBAction func didTapFavoriteButton(_ sender: Any) {
+        let favoriteStoryBoard: UIStoryboard = UIStoryboard(name: "Favorite", bundle: nil)
+        if let favoriteVIewController: UIViewController = favoriteStoryBoard.instantiateInitialViewController() {
+            navigationController?.pushViewController(favoriteVIewController, animated: true)
+        }
+    }
 }
 
 #Preview {
